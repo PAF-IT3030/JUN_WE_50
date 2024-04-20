@@ -28,6 +28,9 @@ public class PostController {
     }
 
 
-    
+    @PostMapping("/posts")
+    public Post createPost(@RequestBody Post post){
+        return postRepository.save(post);
+    }
 
 }
