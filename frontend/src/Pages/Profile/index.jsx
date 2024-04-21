@@ -174,10 +174,10 @@ function Profile(props) {
                 type="submit"
                 className="btn btn-outline-success w-100 mb-3"
               >
-                UPDATE
+                Update
               </button>
               <button className="btn btn-outline-danger w-100 mb-3" onClick={() => handleDelete()}>
-                DELETE
+                Delete
               </button>
             </form>
           </div>
