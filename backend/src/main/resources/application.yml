@@ -8,12 +8,9 @@ spring:
   data:
     mongodb:
       uri: mongodb+srv://hello:1234@assingmentpaf.njxkken.mongodb.net/AssingmentPAF?retryWrites=true&w=majority
+server:
+  port: 8081
 
-      
-      
 logging:
   level:
     org.springframework.security: DEBUG
-
-
-  
