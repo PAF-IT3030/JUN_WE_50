@@ -96,9 +96,12 @@ code {
   display: flex;
 }
 
+
+
 .collage-image {
-  width: 100%; /* Ensure images fill the column */
-  height: auto; /* Maintain aspect ratio */
+  width: 40%; /* Ensure images fill the column */
+  height: 50%; /* Maintain aspect ratio */
+  margin-left: 30px;
 }
 
 
