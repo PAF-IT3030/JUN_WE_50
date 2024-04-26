@@ -92,7 +92,7 @@ function Navbar() {
                 <Link className="nav-link me-3" to="/user">
                   Meal Planning
                 </Link>
-                <Link className="nav-link me-3" to="/user">
+                <Link className="nav-link me-3" to="/recipies">
                   Recipies
                 </Link>
                 <NotificationDropdown />

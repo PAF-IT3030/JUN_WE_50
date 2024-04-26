@@ -10,6 +10,9 @@ import User from "./Pages/User";
 import SharedPosts from "./Pages/SharedPosts";
 import Profile from "./Pages/Profile";
 import UserPosts from "./Pages/UserPosts";
+import MealPlanning from "./Pages/MealPlanning";
+import Recipies from "./Pages/Recipies";
+
 
 function App() {
   return (
@@ -25,6 +28,8 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/mealplanning" element={<MealPlanning />} />
+            <Route path="/recipies" element={<Recipies />} /> 
           </Routes>
         </div>
       </Router>
