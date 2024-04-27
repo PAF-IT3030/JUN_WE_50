@@ -72,8 +72,8 @@ function Profile(props) {
   };
 
   return (
-    <div>
-      <h1 className="text-center">Update Profile</h1>
+    <div style={{border:"solid"}}>
+      <h1 className="text-center" style={{ fontFamily:"cursive",}}>Update Profile</h1>
       <hr />
       <div className="container">
         <div className="row mt-5">

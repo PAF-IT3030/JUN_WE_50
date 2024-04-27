@@ -33,8 +33,8 @@ function Register() {
 
   return (
     <div className="register-container">
-      <div className="register-card">
-        <h1 className="register-title">Sign Up</h1>
+      <div className="register-card" style={{border:"solid"}}>
+        <h1 className="register-title" style={{fontFamily:"cursive"}}>Sign Up</h1>
         {error && <div className="error">{error}</div>}
         <form onSubmit={handleSubmit}>
           <div className="form-group">

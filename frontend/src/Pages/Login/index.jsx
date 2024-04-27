@@ -19,12 +19,12 @@ function Login() {
   };
 
   return (
-    <div className="container mt-5 mb-5 card" style={{ backgroundColor: "#f0f0f0", borderRadius: "10px", boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)" }}>
-      <div className="card-body">
+    <div className="container mt-5 mb-5 card" style={{ backgroundColor: "#f0f0f0", border:"solid", borderRadius: "10px", boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)" }}>
+      <div className="card-body" >
         <div className="row">
           <div className="col-6">
             <div className="text-center">
-              <h1 className="mt-1" style={{ color: "#333", fontSize: "1.5rem", fontWeight: "bold"}}>Welcome to Fitness Pro</h1>
+              <h1 className="mt-1" style={{ color: "#333", fontFamily:"cursive", fontSize: "1.5rem", fontWeight: "bold"}}>Welcome to Fitness Pro</h1>
               <img
                 src={LoginImage}
                 className="image-fluid"
@@ -64,8 +64,8 @@ function Login() {
               </button>
             </form>
             <hr />
-            <Link to="/forgotpassword" className="text-decoration-none" style={{ color: "#555", fontSize: "1rem" }}>
-              Forgot Password?
+            <Link to="/signup" className="text-decoration-none" style={{ color: "#555", fontSize: "1rem" }}>
+              Create new account
             </Link>
           </div>
         </div>
