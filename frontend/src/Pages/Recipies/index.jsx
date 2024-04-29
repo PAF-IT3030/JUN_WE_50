@@ -74,6 +74,7 @@ function Recipies() {
             <label className="form-label"></label>
             <input
               type="text"
+              style={{marginTop: '10px'}}
               lassName="form-control"
               placeholder="Enter the recipe name"
               value={caption}
