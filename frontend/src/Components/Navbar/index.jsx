@@ -89,7 +89,7 @@ function Navbar() {
                 <Link className="nav-link me-3" to="/user">
                   Profile
                 </Link>
-                <Link className="nav-link me-3" to="/user">
+                <Link className="nav-link me-3" to="/mealplanning">
                   Meal Planning
                 </Link>
                 <Link className="nav-link me-3" to="/recipies">
