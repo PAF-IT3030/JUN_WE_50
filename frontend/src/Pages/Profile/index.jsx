@@ -4,6 +4,8 @@ import { getUser, updateUserById } from "../../app/actions/user.actions";
 import { deleteUserById } from "../../app/actions/user.actions";
 import storage from "../../util/firebaseConfig";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import UserImage from "../../assets/profileback.jpg";
+
 
 function Profile(props) {
   const dispatch = useDispatch();
@@ -75,6 +77,14 @@ function Profile(props) {
     <div style={{border:"solid"}}>
       <h1 className="text-center" style={{ fontFamily:"cursive",}}>Update Profile</h1>
       <hr />
+      <center>
+      <img
+                src={UserImage}
+                className="image-fluid"
+                alt="login"
+                style={{ width:"30%"}}
+              />
+      </center>
       <div className="container">
         <div className="row mt-5">
           <div className="col-md-6 offset-md-3">
