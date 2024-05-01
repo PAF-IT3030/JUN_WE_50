@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { login } from "../../app/actions/user.actions";
-import LoginImage from "../../assets/loginpic.png";
+import LoginImage from "../../assets/loginpicture.png";
 
 function Login() {
   const dispatch = useDispatch();
@@ -19,8 +19,8 @@ function Login() {
   };
 
   return (
-    <div className="container mt-5 mb-5 card" style={{ backgroundColor: "#f0f0f0", border:"solid", borderRadius: "10px", boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)" }}>
-      <div className="card-body" >
+    <div className="container mt-5 mb-5 card" style={{ backgroundColor: "white", width: "60%", border:"solid", borderRadius: "10px", boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)" }}>
+      <div className="card-body">
         <div className="row">
           <div className="col-6">
             <div className="text-center">
@@ -44,7 +44,7 @@ function Login() {
                   onChange={(e) => setUsername(e.target.value)}
                   style={{ borderRadius: "5px", border: "1px solid #ddd" }}
                 />
-                <div id="emailHelp" className="form-text" style={{ color: "#888", fontSize: "0.9rem" }}>
+                <div id="emailHelp" className="form-text" style={{ color: "#888", fontSize: "0.7rem" }}>
                   We'll never share your username with anyone else.
                 </div>
               </div>
@@ -65,7 +65,7 @@ function Login() {
             </form>
             <hr />
             <Link to="/signup" className="text-decoration-none" style={{ color: "#555", fontSize: "1rem" }}>
-              Create new account
+              If you haven"t an account. Create new account
             </Link>
           </div>
         </div>
