@@ -16,5 +16,5 @@ public class WorkoutDTO {
     private Date createdAt;
     private Date updatedAt;
     private List<String> likedby;
-    private List<WorkoutCommentDTO> comments;
+    private List<WorkoutCommentDTO> workoutComments;
 }

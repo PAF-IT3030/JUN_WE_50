@@ -11,7 +11,7 @@ public class WorkoutCommentDTO {
     private String userId;
     private String username;
     private String profileImage;
-    private String postId;
+    private String workoutId;
     private Date createdAt;
     private Date updatedAt;
 }

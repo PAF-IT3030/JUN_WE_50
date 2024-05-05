@@ -19,7 +19,7 @@ public class WorkoutShare {
     private String caption;
     private String userId;
     @DBRef
-    private Workout post;
+    private Workout workout;
     private Date createdAt;
     private Date updatedAt;
 }

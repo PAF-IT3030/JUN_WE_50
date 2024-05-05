@@ -18,7 +18,7 @@ public class WorkoutCommentService {
     @Autowired
     private WorkoutCommentRepository workoutCommentRepository;
 
-    public ResponseEntity<?> getCommentById(String id){
+    public ResponseEntity<?> getWorkoutCommentById(String id){
         Optional<WorkoutComment> workoutComment =  workoutCommentRepository.findById(id);
         if(workoutComment.isPresent()){
             return new ResponseEntity<>(workoutComment.get(), HttpStatus.OK);
@@ -26,7 +26,7 @@ public class WorkoutCommentService {
             return new ResponseEntity<>("No Comment Found",HttpStatus.NOT_FOUND);
         }
     }
-    public ResponseEntity<?> getComments(){
+    public ResponseEntity<?> getWorkoutComments(){
         List<WorkoutComment> workoutComment = workoutCommentRepository.findAll();
         if(workoutComment.size() > 0){
             return new ResponseEntity<List<WorkoutComment>>(workoutComment, HttpStatus.OK);
@@ -35,8 +35,8 @@ public class WorkoutCommentService {
         }
     }
 
-    public ResponseEntity<?> getCommentsByPost(String postId){
-        List<WorkoutComment> workoutComment = workoutCommentRepository.findByPostId(postId);
+    public ResponseEntity<?> getWorkoutCommentsByWorkout(String postId){
+        List<WorkoutComment> workoutComment = workoutCommentRepository.findByWorkoutId(postId);
         if(workoutComment.size() > 0){
             return new ResponseEntity<List<WorkoutComment>>(workoutComment, HttpStatus.OK);
         }else {
@@ -44,7 +44,7 @@ public class WorkoutCommentService {
         }
     }
 
-    public ResponseEntity<?> saveComment(WorkoutComment workoutComment){
+    public ResponseEntity<?> saveWorkoutComment(WorkoutComment workoutComment){
         try{
             workoutComment.setCreatedAt(new Date(System.currentTimeMillis()));
             workoutComment.setUpdatedAt(new Date(System.currentTimeMillis()));
@@ -55,7 +55,7 @@ public class WorkoutCommentService {
         }
     }
 
-    public ResponseEntity<?> updateCommentById(String id,WorkoutComment workoutComment){
+    public ResponseEntity<?> updateWorkoutCommentById(String id,WorkoutComment workoutComment){
         Optional<WorkoutComment> existingComment =  workoutCommentRepository.findById(id);
         if(existingComment.isPresent()){
             WorkoutComment updateComment = existingComment.get();
@@ -66,7 +66,7 @@ public class WorkoutCommentService {
             return new ResponseEntity<>("Comment Update Error",HttpStatus.NOT_FOUND);
         }
     }
-    public ResponseEntity<?> deleteCommentById(String id){
+    public ResponseEntity<?> deleteWorkoutCommentById(String id){
         try{
             workoutCommentRepository.deleteById(id);
             return new ResponseEntity<>("Success deleted with " + id,HttpStatus.OK);

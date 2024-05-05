@@ -1,41 +1,44 @@
 package com.paf.socialmedia.controller.workout;
 
 import com.paf.socialmedia.document.PostShare;
+import com.paf.socialmedia.document.workout.WorkoutShare;
 import com.paf.socialmedia.service.PostShareService;
+import com.paf.socialmedia.service.workout.WorkoutShareService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/api/postshare")
+@RequestMapping("/api/workoutshare")
 public class WorkoutShareController {
     @Autowired
-    private PostShareService postShareService;
+    private WorkoutShareService workoutShareService;
 
     @PostMapping
-    public ResponseEntity<?> savePost(@RequestBody PostShare postShare){
-        return postShareService.savePost(postShare);
+    public ResponseEntity<?> saveWorkout(@RequestBody WorkoutShare workoutShare){
+        return workoutShareService.saveWorkout(workoutShare);
     }
     @GetMapping
-    public ResponseEntity<?> getPosts(){
-        return postShareService.getPosts();
+    public ResponseEntity<?> getWorkouts(){
+        return workoutShareService.getWorkouts();
     }
     @GetMapping("/user/{id}")
-    public ResponseEntity<?> getsharedPostsByUserId(@PathVariable String id){
-        return postShareService.getsharedPostsByUserId(id);
+    public ResponseEntity<?> getsharedWorkoutsByUserId(@PathVariable String id){
+        return workoutShareService.getsharedWorkoutsByUserId(id);
     }
     @GetMapping("/{id}")
-    public ResponseEntity<?> getPostById(@PathVariable String id){
-        return postShareService.getPostById(id);
+    public ResponseEntity<?> getWorkoutById(@PathVariable String id){
+        return workoutShareService.getWorkoutById(id);
     }
     @PutMapping("/{id}")
-    public ResponseEntity<?> updatePostById(@PathVariable String id, @RequestBody PostShare postShare){
-        return  postShareService.updatePostById(id,postShare);
+    public ResponseEntity<?> updateWorkoutById(@PathVariable String id, @RequestBody WorkoutShare workoutShare){
+        return  workoutShareService.updateWorkoutById(id,workoutShare);
     }
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deletePostById(@PathVariable String id){
-        return postShareService.deletePostById(id);
+    public ResponseEntity<?> deleteWorkoutById(@PathVariable String id){
+        return workoutShareService.deleteWorkoutById(id);
     }
 }
 

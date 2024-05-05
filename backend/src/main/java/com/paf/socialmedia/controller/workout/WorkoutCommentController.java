@@ -14,29 +14,29 @@ public class WorkoutCommentController {
     private WorkoutCommentService workoutCommentService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> getCommentById(@PathVariable String id){
-        return workoutCommentService.getCommentById(id);
+    public ResponseEntity<?> getWorkoutCommentById(@PathVariable String id){
+        return workoutCommentService.getWorkoutCommentById(id);
     }
     @GetMapping
-    public ResponseEntity<?> getComments(){
-        return workoutCommentService.getComments();
+    public ResponseEntity<?> getWorkoutComments(){
+        return workoutCommentService.getWorkoutComments();
     }
 
-    @GetMapping("/post/{id}")
-    public ResponseEntity<?> getCommentsByPost(@PathVariable String id){
-        return workoutCommentService.getCommentsByPost(id);
+    @GetMapping("/workout/{id}")
+    public ResponseEntity<?> getWorkoutCommentsByWorkout(@PathVariable String id){
+        return workoutCommentService.getWorkoutCommentsByWorkout(id);
     }
     @PostMapping
-    public ResponseEntity<?> saveComment(@RequestBody WorkoutComment workoutComment){
-        return workoutCommentService.saveComment(workoutComment);
+    public ResponseEntity<?> saveWorkoutComment(@RequestBody WorkoutComment workoutComment){
+        return workoutCommentService.saveWorkoutComment(workoutComment);
     }
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateCommentById(@PathVariable String id, @RequestBody WorkoutComment workoutComment){
-        return  workoutCommentService.updateCommentById(id,workoutComment);
+    public ResponseEntity<?> updateWorkoutCommentById(@PathVariable String id, @RequestBody WorkoutComment workoutComment){
+        return  workoutCommentService.updateWorkoutCommentById(id,workoutComment);
     }
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteCommentById(@PathVariable String id){
-        return workoutCommentService.deleteCommentById(id);
+    public ResponseEntity<?> deleteWorkoutCommentById(@PathVariable String id){
+        return workoutCommentService.deleteWorkoutCommentById(id);
     }
 }
 

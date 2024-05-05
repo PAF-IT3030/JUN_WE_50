@@ -29,7 +29,7 @@ public class WorkoutShareService {
     private UserRepository userRepository;
     @Autowired
     private WorkoutRepository workoutRepository;
-    public ResponseEntity<?> getPostById(String id){
+    public ResponseEntity<?> getWorkoutById(String id){
         Optional<WorkoutShare> workout =  workoutShareRepository.findById(id);
         if(workout.isPresent()){
             return new ResponseEntity<>(workout.get(), HttpStatus.OK);
@@ -38,12 +38,12 @@ public class WorkoutShareService {
         }
     }
 
-    public ResponseEntity<?> getPosts(){
+    public ResponseEntity<?> getWorkouts(){
         List<WorkoutShare> workoutNotifications = workoutShareRepository.findAll();
         return new ResponseEntity<List<WorkoutShare>>(workoutNotifications, HttpStatus.OK);
     }
 
-    public ResponseEntity<?> getsharedPostsByUserId(String userId) {
+    public ResponseEntity<?> getsharedWorkoutsByUserId(String userId) {
         List<WorkoutShare> sharedWorkouts = workoutShareRepository.findByUserId(userId);
         List<WorkoutShareDTO> sharedWorkoutDTOList = new ArrayList<>();
 
@@ -62,8 +62,8 @@ public class WorkoutShareService {
             }
 
             WorkoutDTO workoutDTO = new WorkoutDTO();
-            Optional<Workout> workout =  workoutRepository.findById(workoutShare.getPost().getId());
-            System.out.println("postshare.getPost().getId()" + workoutShare.getPost().getId());
+            Optional<Workout> workout =  workoutRepository.findById(workoutShare.getWorkout().getId());
+            System.out.println("postshare.getPost().getId()" + workoutShare.getWorkout().getId());
             if(workout.isPresent()) {
                 System.out.println("post.isPresent()" + workout.get().getId());
                 workoutDTO.setId(workout.get().getId());
@@ -80,7 +80,7 @@ public class WorkoutShareService {
                 }else{
                     workoutDTO.setUsername("Unavailable");
                 }
-                workoutShareDTO.setPost(workoutDTO);
+                workoutShareDTO.setWorkout(workoutDTO);
             }
 
 
@@ -90,7 +90,7 @@ public class WorkoutShareService {
         return new ResponseEntity<>(sharedWorkoutDTOList, HttpStatus.OK);
     }
 
-    public ResponseEntity<?> savePost(WorkoutShare workoutShare){
+    public ResponseEntity<?> saveWorkout(WorkoutShare workoutShare){
         try{
             workoutShare.setCreatedAt(new Date(System.currentTimeMillis()));
             workoutShare.setUpdatedAt(new Date(System.currentTimeMillis()));
@@ -101,7 +101,7 @@ public class WorkoutShareService {
         }
     }
 
-    public ResponseEntity<?> updatePostById(String id,WorkoutShare workoutShare){
+    public ResponseEntity<?> updateWorkoutById(String id,WorkoutShare workoutShare){
         Optional<WorkoutShare> existingWorkout =  workoutShareRepository.findById(id);
         if(existingWorkout.isPresent()){
             WorkoutShare updateWorkout = existingWorkout.get();
@@ -115,7 +115,7 @@ public class WorkoutShareService {
         }
     }
 
-    public ResponseEntity<?> deletePostById(String id){
+    public ResponseEntity<?> deleteWorkoutById(String id){
         try{
             workoutShareRepository.deleteById(id);
             return new ResponseEntity<>("Success deleted with " + id,HttpStatus.OK);

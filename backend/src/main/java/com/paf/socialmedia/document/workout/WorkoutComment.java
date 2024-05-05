@@ -17,7 +17,7 @@ public class WorkoutComment {
     private String id;
     private String text;
     private String userId;
-    private String postId;
+    private String workoutId;
     private Date createdAt;
     private Date updatedAt;
 }

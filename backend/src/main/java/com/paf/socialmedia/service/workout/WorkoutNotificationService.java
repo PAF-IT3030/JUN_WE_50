@@ -16,7 +16,7 @@ public class WorkoutNotificationService {
     @Autowired
     private WorkoutNotificationRepository workoutNotificationRepository;
 
-    public ResponseEntity<?> getNotificationById(String id){
+    public ResponseEntity<?> getWorkoutNotificationById(String id){
         Optional<WorkoutNotification> workoutNotification =  workoutNotificationRepository.findById(id);
         if(workoutNotification.isPresent()){
             return new ResponseEntity<>(workoutNotification.get(), HttpStatus.OK);
@@ -24,15 +24,15 @@ public class WorkoutNotificationService {
             return new ResponseEntity<>("No Notification Found",HttpStatus.NOT_FOUND);
         }
     }
-    public ResponseEntity<?> getNotifications(){
+    public ResponseEntity<?> getWorkoutNotifications(){
         List<WorkoutNotification> workoutNotification = workoutNotificationRepository.findAll();
         return new ResponseEntity<List<WorkoutNotification>>(workoutNotification, HttpStatus.OK);
     }
-    public ResponseEntity<?> getUnreadNotificationsByUserId(String userId) {
+    public ResponseEntity<?> getUnreadWorkoutNotificationsByUserId(String userId) {
         List<WorkoutNotification> workoutNotification = workoutNotificationRepository.findByUserIdAndIsReadFalse(userId);
         return new ResponseEntity<List<WorkoutNotification>>(workoutNotification, HttpStatus.OK);
     }
-    public ResponseEntity<?> saveNotification(WorkoutNotification workoutNotification){
+    public ResponseEntity<?> saveWorkoutNotification(WorkoutNotification workoutNotification){
         try{
             workoutNotification.setCreatedAt(new Date(System.currentTimeMillis()));
             workoutNotification.setIsRead(false);
@@ -44,7 +44,7 @@ public class WorkoutNotificationService {
         }
     }
 
-    public ResponseEntity<?> updateNotificationById(String id,WorkoutNotification workoutNotification){
+    public ResponseEntity<?> updateWorkoutNotificationById(String id,WorkoutNotification workoutNotification){
 
         Optional<WorkoutNotification> existingNotification =  workoutNotificationRepository.findById(id);
         if(existingNotification.isPresent()){
@@ -64,7 +64,7 @@ public class WorkoutNotificationService {
         }
 
     }
-    public ResponseEntity<?> deleteNotificationById(String id){
+    public ResponseEntity<?> deleteWorkoutNotificationById(String id){
         try{
             workoutNotificationRepository.deleteById(id);
             return new ResponseEntity<>("Success deleted with " + id,HttpStatus.OK);

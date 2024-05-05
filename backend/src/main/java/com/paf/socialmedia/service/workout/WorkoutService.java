@@ -30,7 +30,7 @@ public class WorkoutService {
     @Autowired
     private UserRepository userRepository;
 
-    public ResponseEntity<?> getPostById(String id){
+    public ResponseEntity<?> getWorkoutById(String id){
         Optional<Workout> workout =  workoutRepository.findById(id);
         if(workout.isPresent()){
             return new ResponseEntity<>(workout.get(), HttpStatus.OK);
@@ -38,7 +38,7 @@ public class WorkoutService {
             return new ResponseEntity<>("No Workout Found",HttpStatus.NOT_FOUND);
         }
     }
-    public ResponseEntity<?> getPosts(){
+    public ResponseEntity<?> getWorkouts(){
         List<Workout> workouts = workoutRepository.findAll();
 
         List<WorkoutDTO> workoutDTOList = new ArrayList<>();
@@ -59,7 +59,7 @@ public class WorkoutService {
                 workoutDTO.setProfileImage(user.get().getProfileImage());
             }
 
-            List<WorkoutComment> workoutComments = workoutCommentRepository.findByPostId(workout.getId());
+            List<WorkoutComment> workoutComments = workoutCommentRepository.findByWorkoutId(workout.getId());
             if(workoutComments.size() > 0){
                 List<WorkoutCommentDTO> workoutCommentDTOList = new ArrayList<>();
 
@@ -67,7 +67,7 @@ public class WorkoutService {
                     WorkoutCommentDTO workoutCommentDTO = new WorkoutCommentDTO();
                     workoutCommentDTO.setId(workoutComment.getId());
                     workoutCommentDTO.setText(workoutComment.getText());
-                    workoutCommentDTO.setPostId(workoutComment.getPostId());
+                    workoutCommentDTO.setWorkoutId(workoutComment.getWorkoutId());
                     workoutCommentDTO.setCreatedAt(workoutComment.getCreatedAt());
                     workoutCommentDTO.setUpdatedAt(workoutComment.getUpdatedAt());
                     workoutCommentDTO.setUserId(workoutComment.getUserId());
@@ -82,7 +82,7 @@ public class WorkoutService {
 
                 }
 
-                workoutDTO.setComments(workoutCommentDTOList);
+                workoutDTO.setWorkoutComments(workoutCommentDTOList);
             }
             if(user.isPresent()) {
                 workoutDTOList.add(workoutDTO);
@@ -93,7 +93,7 @@ public class WorkoutService {
         return new ResponseEntity<List<WorkoutDTO>>(workoutDTOList, HttpStatus.OK);
     }
 
-    public ResponseEntity<?> getPostsByUserId(String userId) {
+    public ResponseEntity<?> getWorkoutsByUserId(String userId) {
         List<Workout> workouts = workoutRepository.findByUserId(userId);
         List<WorkoutDTO> workoutDTOList = new ArrayList<>();
 
@@ -113,7 +113,7 @@ public class WorkoutService {
                 workoutDTO.setProfileImage(user.get().getProfileImage());
             }
 
-            List<WorkoutComment> workoutComments = workoutCommentRepository.findByPostId(workout.getId());
+            List<WorkoutComment> workoutComments = workoutCommentRepository.findByWorkoutId(workout.getId());
             if(workoutComments.size() > 0){
                 List<WorkoutCommentDTO> workoutCommentDTOList = new ArrayList<>();
 
@@ -121,7 +121,7 @@ public class WorkoutService {
                     WorkoutCommentDTO workoutCommentDTO = new WorkoutCommentDTO();
                     workoutCommentDTO.setId(workoutComment.getId());
                     workoutCommentDTO.setText(workoutComment.getText());
-                    workoutCommentDTO.setPostId(workoutComment.getPostId());
+                    workoutCommentDTO.setWorkoutId(workoutComment.getWorkoutId());
                     workoutCommentDTO.setCreatedAt(workoutComment.getCreatedAt());
                     workoutCommentDTO.setUpdatedAt(workoutComment.getUpdatedAt());
                     workoutCommentDTO.setUserId(workoutComment.getUserId());
@@ -136,7 +136,7 @@ public class WorkoutService {
 
                 }
 
-                workoutDTO.setComments(workoutCommentDTOList);
+                workoutDTO.setWorkoutComments(workoutCommentDTOList);
             }
             if(user.isPresent()) {
                 workoutDTOList.add(workoutDTO);
@@ -146,7 +146,7 @@ public class WorkoutService {
 
         return new ResponseEntity<List<WorkoutDTO>>(workoutDTOList, HttpStatus.OK);
     }
-    public ResponseEntity<?> savePost(Workout workoutShare){
+    public ResponseEntity<?> saveWorkout(Workout workoutShare){
         try{
             workoutShare.setCreatedAt(new Date(System.currentTimeMillis()));
             workoutShare.setUpdatedAt(new Date(System.currentTimeMillis()));
@@ -157,7 +157,7 @@ public class WorkoutService {
         }
     }
 
-    public ResponseEntity<?> updatePostById(String id,Workout workout){
+    public ResponseEntity<?> updateWorkoutById(String id,Workout workout){
         Optional<Workout> existingWorkout =  workoutRepository.findById(id);
         if(existingWorkout.isPresent()){
             Workout updateWorkout = existingWorkout.get();
@@ -173,7 +173,7 @@ public class WorkoutService {
             return new ResponseEntity<>("Workout Update Error",HttpStatus.NOT_FOUND);
         }
     }
-    public ResponseEntity<?> likePostById(String id,Workout workout){
+    public ResponseEntity<?> likeWorkoutById(String id,Workout workout){
         Optional<Workout> existingWorkout =  workoutRepository.findById(id);
         if(existingWorkout.isPresent()){
             Workout updateWorkout = existingWorkout.get();
@@ -185,7 +185,7 @@ public class WorkoutService {
             return new ResponseEntity<>("Workout Update Error",HttpStatus.NOT_FOUND);
         }
     }
-    public ResponseEntity<?> deletePostById(String id){
+    public ResponseEntity<?> deleteWorkoutById(String id){
         try{
             workoutRepository.deleteById(id);
             return new ResponseEntity<>("Success deleted with " + id,HttpStatus.OK);

@@ -8,6 +8,6 @@ import java.util.List;
 
 @Repository
 public interface WorkoutCommentRepository extends MongoRepository<WorkoutComment, String> {
-    List<WorkoutComment> findByPostId(String postId);
+    List<WorkoutComment> findByWorkoutId(String workoutId);
 
 }

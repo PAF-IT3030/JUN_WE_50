@@ -16,32 +16,32 @@ public class WorkoutController {
     private WorkoutService workoutService;
 
     @PostMapping
-    public ResponseEntity<?> savePost(@RequestBody Workout workout){
-        return workoutService.savePost(workout);
+    public ResponseEntity<?> saveWorkout(@RequestBody Workout workout){
+        return workoutService.saveWorkout(workout);
     }
     @GetMapping
-    public ResponseEntity<?> getPosts(){
-        return workoutService.getPosts();
+    public ResponseEntity<?> getWorkouts(){
+        return workoutService.getWorkouts();
     }
     @GetMapping("/user/{id}")
-    public ResponseEntity<?> getPostsByUserId(@PathVariable String id){
-        return workoutService.getPostsByUserId(id);
+    public ResponseEntity<?> getWorkoutsByUserId(@PathVariable String id){
+        return workoutService.getWorkoutsByUserId(id);
     }
     @GetMapping("/{id}")
-    public ResponseEntity<?> getPostById(@PathVariable String id){
-        return workoutService.getPostById(id);
+    public ResponseEntity<?> getWorkoutById(@PathVariable String id){
+        return workoutService.getWorkoutById(id);
     }
     @PutMapping("/{id}")
-    public ResponseEntity<?> updatePostById(@PathVariable String id, @RequestBody Workout workout){
-        return  workoutService.updatePostById(id,workout);
+    public ResponseEntity<?> updateWorkoutById(@PathVariable String id, @RequestBody Workout workout){
+        return  workoutService.updateWorkoutById(id,workout);
     }
     @PutMapping("/like/{id}")
-    public ResponseEntity<?> likePostById(@PathVariable String id, @RequestBody Workout workout){
-        return  workoutService.likePostById(id,workout);
+    public ResponseEntity<?> likeWorkoutById(@PathVariable String id, @RequestBody Workout workout){
+        return  workoutService.likeWorkoutById(id,workout);
     }
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deletePostById(@PathVariable String id){
-        return workoutService.deletePostById(id);
+    public ResponseEntity<?> deleteWorkoutById(@PathVariable String id){
+        return workoutService.deleteWorkoutById(id);
     }
 }
 

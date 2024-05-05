@@ -10,7 +10,7 @@ public class WorkoutShareDTO {
     private String userId;
     private String username;
     private String profileImage;
-    private WorkoutDTO post;
+    private WorkoutDTO workout;
     private Date createdAt;
     private Date updatedAt;
 }

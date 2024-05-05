@@ -14,28 +14,28 @@ public class WorkoutNotificationController {
     private WorkoutNotificationService workoutNotificationService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> getNotificationById(@PathVariable String id){
-        return workoutNotificationService.getNotificationById(id);
+    public ResponseEntity<?> getWorkoutNotificationById(@PathVariable String id){
+        return workoutNotificationService.getWorkoutNotificationById(id);
     }
     @GetMapping
     public ResponseEntity<?> getNotifications(){
-        return workoutNotificationService.getNotifications();
+        return workoutNotificationService.getWorkoutNotifications();
     }
     @GetMapping("/user/{id}")
     public ResponseEntity<?> getUnreadNotificationsByUserId(@PathVariable String id){
-        return workoutNotificationService.getUnreadNotificationsByUserId(id);
+        return workoutNotificationService.getUnreadWorkoutNotificationsByUserId(id);
     }
     @PostMapping
     public ResponseEntity<?> saveNotification(@RequestBody WorkoutNotification workoutNotification){
-        return workoutNotificationService.saveNotification(workoutNotification);
+        return workoutNotificationService.saveWorkoutNotification(workoutNotification);
     }
     @PutMapping("/{id}")
     public ResponseEntity<?> updateNotificationById(@PathVariable String id, @RequestBody WorkoutNotification workoutNotification){
-        return  workoutNotificationService.updateNotificationById(id,workoutNotification);
+        return  workoutNotificationService.updateWorkoutNotificationById(id,workoutNotification);
     }
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteNotificationById(@PathVariable String id){
-        return workoutNotificationService.deleteNotificationById(id);
+        return workoutNotificationService.deleteWorkoutNotificationById(id);
     }
 }
 
