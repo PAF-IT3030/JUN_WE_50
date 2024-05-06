@@ -40,12 +40,13 @@ function Register() {
         <div className="loginform" style={{marginRight:"700px"}}>
 
         <center>
-          
+
         <h1 style={{ color: "white", fontFamily:"cursive", fontSize: "2.5rem", fontWeight: "bold"}}>SIGN UP</h1></center>
         {error && <div className="error">{error}</div>}
         <form onSubmit={handleSubmit}>
           
             <label style={{ color: "white"}} htmlFor="username">Username</label>
+            
             <input
               type="text"
               id="username"
