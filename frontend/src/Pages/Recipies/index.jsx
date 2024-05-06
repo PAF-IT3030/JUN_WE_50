@@ -25,6 +25,7 @@ function Recipies() { // class
     await dispatch (savePost(post)); // post
     await dispatch(getPostsByUserId(user.userId)); //id
     setCaption(""); // set caption
+    
     setImgLink(""); // set image
     setDesc(""); // set description
     fileInputRef.current.value = ""; // fileinput
@@ -82,7 +83,7 @@ function Recipies() { // class
 
 
             <input
-            
+
               type="text " // type
               style={{marginTop: '50px', width: '500px'}} // styles
               className="form-control " // classname
