@@ -88,7 +88,7 @@ function Recipies() { // class
 
               onChange={(e) =>  setCaption  (e.target.value)} // onchange
             />
-            
+
             <br></br>
             <input // inpt
 
@@ -103,6 +103,7 @@ function Recipies() { // class
             <i>*maximum 4 images </i>
 
           <div className="mb-3">
+            
             {imgLink && (
               
               <img
