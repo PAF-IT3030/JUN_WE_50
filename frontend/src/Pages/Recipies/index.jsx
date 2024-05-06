@@ -27,7 +27,7 @@ function Recipies() {
     setCaption(""); // set caption
     setImgLink(""); // set image
     setDesc(""); // set description
-    fileInputRef.current.value = "";
+    fileInputRef.current.value = ""; // fileinput
 
   };
 
