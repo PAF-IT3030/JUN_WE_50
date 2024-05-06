@@ -79,7 +79,7 @@ function Recipies() { // class
             <input
               type="text "
               style={{marginTop: '50px', width: '500px'}} // styles
-              className="form-control"
+              className="form-control "
               placeholder="Please Enter the recipe name " 
               value={caption}
               onChange={(e) =>  setCaption  (e.target.value)}
@@ -95,7 +95,7 @@ function Recipies() { // class
             />
           </div>
             <i>*maximum 4 images </i>
-            
+
           <div className="mb-3">
             {imgLink && (
               <img
