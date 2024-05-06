@@ -16,8 +16,9 @@ function Home() {
   return (
     <div className="" style={{marginLeft:"30px"}}>
       <div className="row">
+        <hr></hr>
         <div className="col-md-3">
-          <div className="sticky-top" style={{marginTop:"10px"}}>
+          <div className="sticky-top" style={{marginTop:"2px"}}>
             {/* Sidebar */}
             <NewUsersSuggest />
           </div>
@@ -29,7 +30,7 @@ function Home() {
               {/* Status Update Form */}
               {/* You can add a status update form here */}
             </div>
-            <div className="col-12 mt-3">
+            <div className="" style={{marginRight:"10px",marginTop:"2px"}}>
               {/* News Feed */}
               <Posts posts={post.posts} fetchType="GET_ALL_POSTS" />
             </div>
@@ -40,8 +41,8 @@ function Home() {
             {/* Right Sidebar */}
             {/* You can add friend suggestions or trending topics here */}
           </div>
-          <h3 style={{marginTop:"10px" , backgroundColor:"white", borderRadius:"2px", marginRight:"10px"}} >Notifications</h3>
-          <div className="col-mt-5" style={{marginRight:"10px"}}>
+          
+          <div className="col-mt-5" style={{marginRight:"10px",marginTop:"2px"}}>
           <Notifications/>
           </div>
         </div>
