@@ -76,6 +76,7 @@ function Recipies() { // class
           <center><h2 className="mt-2">Share Your all Recipies With Us </h2>
           <div className="mt-2 mb-3">
             <label className="form-label "></label>
+            
 
             <input
               type="text " // type
