@@ -71,7 +71,7 @@ function Recipies() {
         <form onSubmit={handleSubmit}>
           <center><h1 className="mt-2">Eat Healthy</h1></center>
           <div style={{height: '30px'}}></div>
-          <center><h2 className="mt-2">Share Your Recipies With Us</h2>
+          <center><h2 className="mt-2">Share Your all Recipies With Us </h2>
           <div className="mt-2 mb-3">
             <label className="form-label "></label>
             <input
@@ -87,7 +87,7 @@ function Recipies() {
               type="text"
               style={{marginTop: '10px',  width: '501px'}}
               className="form-control"
-              placeholder=" Please Enter the recipe description"
+              placeholder=" Please Enter the recipe description "
               value={desc}
               onChange={(e) => setDesc(e.target.value)}
             />
