@@ -12,6 +12,7 @@ function SharedPostsList({posts, fetchType}) {
 
   return (
     <div>
+      {/* system message will be displayed */}
         {postsList.length ? [...postsList].reverse().map((post) => {
           return <SharedPostCard key={post.id} post={post} fetchType={fetchType}/>;
         }) : <h5>No shared posts yet...</h5>}

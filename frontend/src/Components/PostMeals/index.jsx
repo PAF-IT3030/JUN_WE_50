@@ -94,7 +94,7 @@ function PostAdd() {
               multiple
             />
           </div>
-
+{/* publish button */}
           <button type="submit" className="btn btn-outline-primary">
             PUBLISH
           </button>

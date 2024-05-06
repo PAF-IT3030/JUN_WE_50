@@ -60,7 +60,7 @@ function PostAdd() {
     }
   };
   
-  
+  // design post add
   return (
     <div className="container mb-3 card create">
       <div className="card-body">
