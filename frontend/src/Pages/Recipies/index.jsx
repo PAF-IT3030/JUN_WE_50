@@ -1,6 +1,6 @@
 import React, { useRef } from "react"; // import
 import { useDispatch, useSelector } from "react-redux";
-import { getPostsByUserId, savePost } from "../../app/actions/post.actions";
+import { getPostsByUserId, savePost } from "../../app/actions/post.actions"; // import
 import storage from "../../util/firebaseConfig";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";// import
 import './recipies.css'; // css
@@ -28,7 +28,7 @@ function Recipies() { // class
     setImgLink(""); // set image
     setDesc(""); // set description
     fileInputRef.current.value = ""; // fileinput
-    
+
 
   };
 
