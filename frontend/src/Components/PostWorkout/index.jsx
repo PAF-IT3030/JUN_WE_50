@@ -62,6 +62,7 @@ function PostAdd() {
 
 
   return (
+    // Post workout frontend
     <div className="container mb-3 card create">
       <div className="card-body">
         <form onSubmit={handleSubmit}>

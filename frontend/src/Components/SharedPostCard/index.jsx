@@ -32,6 +32,7 @@ function SharedPostCard({ post, fetchType }) {
   };
 
   return (
+    // shared post
     <div className="container p-2 card mb-4 post-card">
       <div className="card-body">
         <div className="row">
