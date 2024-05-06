@@ -10,6 +10,8 @@ function Profile(props) {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   
+  // State for success message
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   const [username, setUsername] = useState(user?.user?.username);
   const [email, setEmail] = useState(user?.user?.email);
@@ -33,6 +35,12 @@ function Profile(props) {
 
     dispatch(updateUserById(userUpdate));
 
+    // Show success message
+    setShowSuccessMessage(true);
+    setTimeout(() => {
+      setShowSuccessMessage(false);
+    }, 3000); // Hide success message after 3 seconds
+
     props.closeModal();
   };
 
@@ -54,8 +62,6 @@ function Profile(props) {
 
     const storageRef = ref(storage, `/users/${file.name}`);
 
-    // progress can be paused and resumed. It also exposes progress updates.
-    // Receives the storage reference and the file to upload.
     const uploadTask = uploadBytesResumable(storageRef, file);
 
     uploadTask.on(
@@ -65,7 +71,6 @@ function Profile(props) {
       },
       (err) => console.log(err),
       () => {
-        // download url
         getDownloadURL(uploadTask.snapshot.ref).then((url) => {
           setProfileImage(url);
         });
@@ -187,6 +192,12 @@ function Profile(props) {
                 Delete
               </button>
             </form>
+            {/* Success message */}
+            {showSuccessMessage && (
+              <div className="alert alert-success" role="alert">
+                Profile updated successfully!
+              </div>
+            )}
           </div>
         </div>
       </div>
