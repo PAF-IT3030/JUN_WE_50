@@ -87,7 +87,7 @@ function Recipies() {
               type="text"
               style={{marginTop: '10px',  width: '501px'}}
               className="form-control "
-              placeholder=" Please Enter the recipe description "
+              placeholder=" Please Enter the recipe description " //placeholder
               value={desc}
               onChange={(e) => setDesc(e.target.value)}
             />
