@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef } from "react"; // import
 import { useDispatch, useSelector } from "react-redux";
 import { getPostsByUserId, savePost } from "../../app/actions/post.actions";
 import storage from "../../util/firebaseConfig";
