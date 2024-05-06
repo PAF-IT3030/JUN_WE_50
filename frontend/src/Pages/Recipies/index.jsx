@@ -76,7 +76,7 @@ function Recipies() {
               type="text"
               style={{marginTop: '10px'}}
               lassName="form-control"
-              placeholder="Enter the recipe name"
+              placeholder="Please Enter the recipe name"
               value={caption}
               onChange={(e) => setCaption(e.target.value)}
             />
@@ -84,7 +84,7 @@ function Recipies() {
               type="text"
               style={{marginTop: '10px'}}
               className="form-control"
-              placeholder="Enter the recipe description"
+              placeholder=" Please Enter the recipe description"
               value={desc}
               onChange={(e) => setDesc(e.target.value)}
             />
