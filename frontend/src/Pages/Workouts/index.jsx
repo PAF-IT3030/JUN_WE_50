@@ -25,9 +25,9 @@ function User() {
         <UserProfile />
       </div>
 
-      <div className="col-md-7">
+      <div className="col-md-9">
         <PostAdd />
-        <nav>
+        {/* <nav>
           <div class="nav nav-tabs " id="nav-tab" role="tablist">
             <button
               class="nav-link active"
@@ -54,8 +54,8 @@ function User() {
               SHARED POSTS
             </button>
           </div>
-        </nav>
-        <div class="tab-content" id="nav-tabContent">
+        </nav> */}
+        {/* <div class="tab-content" id="nav-tabContent">
           <div
             class="tab-pane fade show active"
             id="nav-home"
@@ -72,11 +72,11 @@ function User() {
           >
             <SharedPosts />
           </div>
-        </div>
+        </div> */}
       </div>
-      <div className="col-md-3" style={{ position: "fixed", top: "100px", right: "30px" }}>
+      {/* <div className="col-md-3" style={{ position: "fixed", top: "100px", right: "30px" }}>
         <Notifications />
-      </div>
+      </div> */}
     </div>
   );
 }
