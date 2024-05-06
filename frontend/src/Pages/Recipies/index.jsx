@@ -1,9 +1,9 @@
-import React, { useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getPostsByUserId, savePost } from "../../app/actions/post.actions";
-import storage from "../../util/firebaseConfig";
-import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import './recipies.css';
+import React, { useRef } from "react"; // import
+import { useDispatch, useSelector } from "react-redux"; // import
+import { getPostsByUserId, savePost } from "../../app/actions/post.actions"; // import
+import storage from "../../util/firebaseConfig"; // import
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";// import
+import './recipies.css'; // css
 
 function Recipies() { // class
   const dispatch = useDispatch(); // dispatch
@@ -16,7 +16,7 @@ function Recipies() { // class
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // preventdef
-    const post = {
+    const post = { // open c
       userId: user.userId, //userID
       caption, //caption
       imgLink, //imglinl
@@ -29,6 +29,7 @@ function Recipies() { // class
     setDesc(""); // set description
     fileInputRef.current.value = ""; // fileinput
 
+
   };
 
   const uploadImage = (e) => { // upload image
@@ -40,24 +41,25 @@ function Recipies() { // class
     }
   
     // upload up to 4 images
-    const maxImages = 4; //max 4 files
+    const maxImages =  4; //max 4 files
     const numImages = Math.min(maxImages, files.length); // numimgs
   
     for (let i = 0; i < numImages; i++) {
       const file = files[i]; // filearr
-      const storageRef = ref(storage, `/posts/${file.name}`); //storage
+      const storageRef  = ref(storage, `/posts /${file.name}`); //storage
   
       const uploadTask = uploadBytesResumable(storageRef, file); //task uplosad
   
       uploadTask.on(
-        "state_changed",
+        "state_changed", // comment
         (snapshot) => {
-          Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100); //rounding
+          Math.round((snapshot.bytesTransferred  / snapshot.totalBytes) * 100); //rounding
         },
         (err) => console.log(err), // error
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((url) => {
-            setImgLink((prevLinks) => [...prevLinks, url]); //setImglink
+            setImgLink((prevLinks) => [...prevLinks,  url]); 
+            //setImglink
           });
         }
       );
@@ -74,31 +76,34 @@ function Recipies() { // class
           <center><h2 className="mt-2">Share Your all Recipies With Us </h2>
           <div className="mt-2 mb-3">
             <label className="form-label "></label>
+
+
             <input
-              type="text"
+              type="text " // type
               style={{marginTop: '50px', width: '500px'}} // styles
-              className="form-control"
-              placeholder="Please Enter the recipe name"
-              value={caption}
-              onChange={(e) =>  setCaption(e.target.value)}
+              className="form-control " // classname
+              placeholder="Please Enter the recipe name " // name
+              value={caption} 
+              onChange={(e) =>  setCaption  (e.target.value)}
             />
             <br></br>
             <input 
-              type="text"
+              type="text" 
               style={{marginTop: '10px',  width: '501px'}} // styles
               className="form-control " // classname
               placeholder=" Please Enter the recipe description " //placeholder
-              value={desc}
+              value={desc} // value
               onChange={(e) => setDesc(e.target.value)} //setdesc value
             />
           </div>
             <i>*maximum 4 images </i>
+
           <div className="mb-3">
             {imgLink && (
+              
               <img
                 src={imgLink} // imglink
                 className="img-fluid me-3" // classname
-                
                 alt="Profile" // profile
               />
             )}
@@ -108,20 +113,21 @@ function Recipies() { // class
               className="form-control " // classname
               style={{width: '500px'}} //styles
               onChange={(e) => uploadImage(e)} // uploadimg
-              ref={fileInputRef} // fileref
-              multiple 
+              ref={fileInputRef } // fileref
+              multiple  // multi
             />
           </div></center>
+          <br></br> 
+          
 
-          <br></br>
-
-          <center><button style={{marginBottom: '200px'}} type="submit" className="btn btn-outline-primary">
-            POST 
+          <center><button style={{marginBottom: '200px'}} type="submit" className="btn btn-outline-primary"> 
+            POST  
           </button></center> 
-        </form>
+
+        </form> 
       </div>
     </div>
+
   );
 }
-
 export default Recipies;
