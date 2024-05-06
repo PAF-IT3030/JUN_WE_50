@@ -211,7 +211,7 @@ function PostCard({ post, fetchType }) {
   };
 
   return (
-    <div className="card mb-4 post-card">
+    <div className="card mb-4 post">
       <div className="card-body">
         <div className="row">
           <div className="col-8">
