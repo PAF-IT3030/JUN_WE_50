@@ -10,7 +10,7 @@ function Register() {
   const [password, setPassword] = React.useState("");
   const [confirmPassword, setConfirmPassword] = React.useState("");
   const [error, setError] = React.useState("");
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -88,3 +88,4 @@ function Register() {
 }  
 
 export default Register;
+
