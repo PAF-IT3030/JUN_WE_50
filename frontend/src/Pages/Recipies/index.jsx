@@ -110,19 +110,20 @@ function Recipies() { // class
               className="form-control " // classname
               style={{width: '500px'}} //styles
               onChange={(e) => uploadImage(e)} // uploadimg
-              ref={fileInputRef} // fileref
+              ref={fileInputRef } // fileref
               multiple  // multi
             />
           </div></center>
 
           <br></br> 
 
-          <center><button style={{marginBottom: '200px'}} type="submit" className="btn btn-outline-primary">
+          <center><button style={{marginBottom: '200px'}} type="submit" className="btn btn-outline-primary"> 
             POST 
           </button></center> 
         </form>
       </div>
     </div>
+
   );
 }
 
