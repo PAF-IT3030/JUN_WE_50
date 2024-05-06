@@ -73,7 +73,7 @@ function Recipies() {
           <div style={{height: '30px'}}></div>
           <center><h2 className="mt-2">Share Your Recipies With Us</h2>
           <div className="mt-2 mb-3">
-            <label className="form-label"></label>
+            <label className="form-label "></label>
             <input
               type="text"
               style={{marginTop: '50px', width: '500px'}}
@@ -85,7 +85,7 @@ function Recipies() {
             <br></br>
             <input 
               type="text"
-              style={{marginTop: '10px',  width: '500px'}}
+              style={{marginTop: '10px',  width: '501px'}}
               className="form-control"
               placeholder=" Please Enter the recipe description"
               value={desc}
