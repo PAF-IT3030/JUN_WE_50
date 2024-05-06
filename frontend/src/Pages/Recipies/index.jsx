@@ -6,9 +6,9 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import './recipies.css';
 
 function Recipies() {
-  const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
-  const fileInputRef = useRef(null);
+  const dispatch = useDispatch(); // dispatch
+  const user = useSelector((state) => state.user); // user
+  const fileInputRef = useRef(null ); // constfil
 
   const [caption, setCaption] = React.useState(""); //usestate
   const [imgLink, setImgLink] = React.useState(""); //set state2
@@ -67,8 +67,8 @@ function Recipies() {
   
   return (
     <div className="recipe" style={{ backgroundImage: 'url("https://www.shutterstock.com/image-photo/food-background-spices-herbs-utensil-260nw-2255294345.jpg")', backgroundSize: 'cover', backgroundPosition: 'center', width: '100%' , height: '100%'}}>
-      <div className="card-body" >
-        <form onSubmit={handleSubmit}>
+      <div className="card-body" > 
+        <form onSubmit={handleSubmit}> 
           <center><h1 className="mt-2">Eat Healthy </h1> </center> 
           <div style={{height: '30px'}}></div>
           <center><h2 className="mt-2">Share Your all Recipies With Us </h2>
@@ -99,7 +99,7 @@ function Recipies() {
                 src={imgLink} // imglink
                 className="img-fluid me-3" // classname
                 
-                alt="Profile"
+                alt="Profile" // profile
               />
             )}
 
