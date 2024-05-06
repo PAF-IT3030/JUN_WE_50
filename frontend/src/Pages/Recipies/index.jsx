@@ -50,7 +50,7 @@ function Recipies() { // class
       const uploadTask = uploadBytesResumable(storageRef, file); //task uplosad
   
       uploadTask.on(
-        "state_changed",
+        "state_changed", // comment
         (snapshot) => {
           Math.round((snapshot.bytesTransferred  / snapshot.totalBytes) * 100); //rounding
         },
