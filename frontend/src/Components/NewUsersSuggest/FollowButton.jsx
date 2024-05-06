@@ -57,14 +57,14 @@ function FollowButton({ userDetails, fetchType }) {
     <>
       {followed ? (
         <button
-          className="btn btn-warning btn-sm"
+          className="btn-follow btn-sm"
           onClick={handleOnFollow}
         >
           Unfollow
         </button>
       ) : (
         <button
-          className="btn btn-warning btn-sm"
+          className="btn-follow btn-sm"
           onClick={handleOnFollow}
         >
           Follow
