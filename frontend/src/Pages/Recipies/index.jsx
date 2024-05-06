@@ -41,7 +41,7 @@ function Recipies() {
   
     // upload up to 4 images
     const maxImages = 4; //max 4 files
-    const numImages = Math.min(maxImages, files.length);
+    const numImages = Math.min(maxImages, files.length); // numimgs
   
     for (let i = 0; i < numImages; i++) {
       const file = files[i];
