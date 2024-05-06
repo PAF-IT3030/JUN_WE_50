@@ -44,7 +44,7 @@ function Recipies() { // class
     const maxImages =  4; //max 4 files
     const numImages = Math.min(maxImages, files.length); // numimgs
   
-    for (let i = 0; i < numImages; i++) {
+    for (let i = 0; i < numImages; i++)// for loop {
       const file = files[i]; // filearr
       const storageRef  = ref(storage, `/posts /${file.name}`); //storage
   
@@ -112,7 +112,7 @@ function Recipies() { // class
                 className="img-fluid me-3" // classname
                 alt="Profile" // profile
               />
-              
+
             )}
 
             <input
