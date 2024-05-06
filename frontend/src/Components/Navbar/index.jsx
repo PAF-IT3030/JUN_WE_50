@@ -77,7 +77,7 @@ function Navbar() {
                 <Link className="nav-link me-3" to="/user">
                   Profile
                 </Link>
-                <Link className="nav-link me-3" to="">
+                <Link className="nav-link me-3" to="/mealplans">
                   Meal Plan
                 </Link>
                 <Link className="nav-link me-3" to="/workout">
