@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getPostsByUserId, savePost } from "../../app/actions/post.actions";
 import storage from "../../util/firebaseConfig";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import './recipies.css';
 
 function Recipies() {
   const dispatch = useDispatch();
@@ -65,24 +66,26 @@ function Recipies() {
   
   
   return (
-    <div className="container mb-3 card create-card">
-      <div className="card-body">
+    <div className="recipe" style={{ backgroundImage: 'url("https://www.shutterstock.com/image-photo/food-background-spices-herbs-utensil-260nw-2255294345.jpg")', backgroundSize: 'cover', backgroundPosition: 'center', width: '100%' , height: '100%'}}>
+      <div className="card-body" >
         <form onSubmit={handleSubmit}>
           <center><h1 className="mt-2">Eat Healthy</h1></center>
-          <h2 className="mt-2">Share Your Recipies With Us</h2>
+          <div style={{height: '30px'}}></div>
+          <center><h2 className="mt-2">Share Your Recipies With Us</h2>
           <div className="mt-2 mb-3">
             <label className="form-label"></label>
             <input
               type="text"
-              style={{marginTop: '10px'}}
-              lassName="form-control"
+              style={{marginTop: '50px', width: '500px'}}
+              className="form-control"
               placeholder="Please Enter the recipe name"
               value={caption}
               onChange={(e) => setCaption(e.target.value)}
             />
+            <br></br>
             <input 
               type="text"
-              style={{marginTop: '10px'}}
+              style={{marginTop: '10px', width: '500px'}}
               className="form-control"
               placeholder=" Please Enter the recipe description"
               value={desc}
@@ -95,6 +98,7 @@ function Recipies() {
               <img
                 src={imgLink}
                 className="img-fluid me-3"
+                
                 alt="Profile"
               />
             )}
@@ -102,15 +106,18 @@ function Recipies() {
             <input
               type="file"
               className="form-control"
+              style={{width: '500px'}}
               onChange={(e) => uploadImage(e)}
               ref={fileInputRef}
               multiple 
             />
-          </div>
+          </div></center>
 
-          <button type="submit" className="btn btn-outline-primary">
+          <br></br>
+
+          <center><button style={{marginBottom: '200px'}} type="submit" className="btn btn-outline-primary">
             POST
-          </button>
+          </button></center>
         </form>
       </div>
     </div>
