@@ -4,12 +4,12 @@ import { getUser, updateUserById } from "../../app/actions/user.actions";
 import { deleteUserById } from "../../app/actions/user.actions";
 import storage from "../../util/firebaseConfig";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import UserImage from "../../assets/profileback.jpg";
 
 
 function Profile(props) {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
+  
 
   const [username, setUsername] = useState(user?.user?.username);
   const [email, setEmail] = useState(user?.user?.email);
@@ -74,23 +74,20 @@ function Profile(props) {
   };
 
   return (
-    <div style={{border:"solid"}}>
-      <h1 className="text-center" style={{ fontFamily:"cursive",}}>Update Profile</h1>
-      <hr />
+    <div style={{ backgroundImage: `url('https://wallpaperset.com/w/full/a/3/d/45475.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center', borderRadius: "10px", boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)" }}>
+      
+      <h1 className="text-center" style={{ fontFamily:"cursive", color:"white"}}>Update Profile</h1>
+      <hr style={{color:"white"}}/>
+      
       <center>
-      <img
-                src={UserImage}
-                className="image-fluid"
-                alt="login"
-                style={{ width:"30%"}}
-              />
+        <div style={{height:"250px", width:"250px"}}></div>
       </center>
       <div className="container">
         <div className="row mt-5">
           <div className="col-md-6 offset-md-3">
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
-                <label htmlFor="username" className="form-label">
+                <label style={{color:"white"}} htmlFor="username" className="form-label">
                   Username
                 </label>
                 <input
@@ -103,7 +100,7 @@ function Profile(props) {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="contactNumber" className="form-label">
+                <label style={{color:"white"}} htmlFor="contactNumber" className="form-label">
                   Contact Number
                 </label>
                 <input
@@ -119,7 +116,7 @@ function Profile(props) {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="email" className="form-label">
+                <label style={{color:"white"}} htmlFor="email" className="form-label">
                   Email Address
                 </label>
                 <input
@@ -135,7 +132,7 @@ function Profile(props) {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="country" className="form-label">
+                <label style={{color:"white"}} htmlFor="country" className="form-label">
                   Country
                 </label>
                 <input
@@ -157,7 +154,7 @@ function Profile(props) {
                     alt="Profile"
                   />
                 )}
-                <label htmlFor="country" className="form-label">
+                <label style={{color:"white"}} htmlFor="country" className="form-label">
                   Profile Image
                 </label>
                 <input
@@ -194,6 +191,7 @@ function Profile(props) {
         </div>
       </div>
     </div>
+    
   );
 }
 
