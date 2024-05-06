@@ -121,7 +121,6 @@ function Recipies() { // class
           
 
           <center><button style={{marginBottom: '200px'}} type="submit" className="btn btn-outline-primary"> 
-
           
             POST 
           </button></center> 
