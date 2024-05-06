@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 @Data
+// Create workoutdto
 public class WorkoutDTO {
     private String id;
     private String userId;

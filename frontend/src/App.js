@@ -10,40 +10,40 @@ import User from "./Pages/User";
 import SharedPosts from "./Pages/SharedPosts";
 import Profile from "./Pages/Profile";
 import UserPosts from "./Pages/UserPosts";
-import Meals from "../src/Pages/Workouts/"
+import Meals from "../src/Pages/Workouts/";
 
 function App() {
-  return (
-    <div>
-      <Router>
-        <Navbar />
-        <div className="body">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/user" element={<User />} />
-            <Route path="/user/:userId" element={<UserPosts />} />
-            <Route path="/sharedposts" element={<SharedPosts />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Register />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/workout" element={<Meals />} />
-          </Routes>
+    return (
+        <div>
+            <Router>
+                <Navbar />
+                <div className="body">
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/user" element={<User />} />
+                        <Route path="/user/:userId" element={<UserPosts />} />
+                        <Route path="/sharedposts" element={<SharedPosts />} />
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/signup" element={<Register />} />
+                        <Route path="/profile" element={<Profile />} />
+                        <Route path="/workout" element={<Meals />} />
+                    </Routes>
+                </div>
+            </Router>
+            <ToastContainer
+                position="top-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
         </div>
-      </Router>
-      <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
-    </div>
-  );
+    );
 }
 
 export default App;
