@@ -15,14 +15,14 @@ function Recipies() {
   const [desc, setDesc] = React.useState(""); //setstate3
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); // preventdef
     const post = {
       userId: user.userId, //userID
       caption, //caption
       imgLink, //imglinl
       desc, //desc
     };
-    await dispatch (savePost(post));
+    await dispatch (savePost(post)); // post
     await dispatch(getPostsByUserId(user.userId));
     setCaption(""); // set caption
     setImgLink(""); // set image
