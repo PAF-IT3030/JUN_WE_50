@@ -13,6 +13,7 @@ public class WorkoutCommentController {
     @Autowired
     private WorkoutCommentService workoutCommentService;
 
+    //Get data from id
     @GetMapping("/{id}")
     public ResponseEntity<?> getWorkoutCommentById(@PathVariable String id){
         return workoutCommentService.getWorkoutCommentById(id);
