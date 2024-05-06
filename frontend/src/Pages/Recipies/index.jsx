@@ -24,7 +24,7 @@ function Recipies() { // class
       imgLink, //imglinl
       desc, //desc
     };
-    
+
     await dispatch (savePost(post)); // post
     await dispatch(getPostsByUserId(user.userId)); //id
     setCaption(""); // set caption
@@ -39,7 +39,7 @@ function Recipies() { // class
   const uploadImage = (e) => { // upload image
     const files = e.target.files; // constfile
   
-    if (files.length === 0) {
+    if (files.length === 0)// if condition {
       alert("Please upload at least one image!"); // alermsg
       return;
     }
