@@ -10,14 +10,14 @@ function Recipies() {
   const user = useSelector((state) => state.user);
   const fileInputRef = useRef(null);
 
-  const [caption, setCaption] = React.useState("");
-  const [imgLink, setImgLink] = React.useState("");
-  const [desc, setDesc] = React.useState("");
+  const [caption, setCaption] = React.useState(""); //usestate
+  const [imgLink, setImgLink] = React.useState(""); //set state2
+  const [desc, setDesc] = React.useState(""); //setstate3
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const post = {
-      userId: user.userId,
+      userId: user.userId, //userID
       caption,
       imgLink,
       desc,
@@ -26,7 +26,7 @@ function Recipies() {
     await dispatch(getPostsByUserId(user.userId));
     setCaption(""); // set caption
     setImgLink(""); // set image
-    setDesc("");
+    setDesc(""); // set description
     fileInputRef.current.value = "";
 
   };
