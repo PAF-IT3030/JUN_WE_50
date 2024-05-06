@@ -45,7 +45,7 @@ function Recipies() {
   
     for (let i = 0; i < numImages; i++) {
       const file = files[i];
-      const storageRef = ref(storage, `/posts/${file.name}`);
+      const storageRef = ref(storage, `/posts/${file.name}`); //storage
   
       const uploadTask = uploadBytesResumable(storageRef, file); //task uplosad
   
@@ -57,7 +57,7 @@ function Recipies() {
         (err) => console.log(err), // error
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((url) => {
-            setImgLink((prevLinks) => [...prevLinks, url]);
+            setImgLink((prevLinks) => [...prevLinks, url]); //setImglink
           });
         }
       );
