@@ -68,10 +68,6 @@ function Navbar() {
           
           
 
-
-
-
-
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0"></ul>
             {user.loginStatus ? (
@@ -82,11 +78,11 @@ function Navbar() {
                 <Link className="nav-link me-3" to="/user">
                   Profile
                 </Link>
-                <Link className="nav-link me-3" to="/mealplanning">
-                  Meal Planning
+                <Link className="nav-link me-3" to="/meals">
+                  Meals
                 </Link>
-                <Link className="nav-link me-3" to="/recipies">
-                  Recipies
+                <Link className="nav-link me-3" to="/workout">
+                  Workout
                 </Link>
                 <NotificationDropdown />
                 <button

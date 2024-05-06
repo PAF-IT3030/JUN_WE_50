@@ -211,7 +211,7 @@ function PostCard({ post, fetchType }) {
   };
 
   return (
-    <div className="card mb-4 post-card">
+    <div className="card mb-4 post">
       <div className="card-body">
         <div className="row">
           <div className="col-8">
@@ -293,29 +293,32 @@ function PostCard({ post, fetchType }) {
               {imgLinkEdit && imgLinkEdit.length && (
                 <div className="row">
                   {imgLinkEdit.slice(0, 2).map((imgLink, index) => (
-                    <img
-                      key={index}
-                      src={imgLink}
-                      className="collage-image"
-                      alt="postImages"
-                    />
+                    <div key={index} className="collage-item">
+                      <img
+                        src={imgLink}
+                        className="collage-image"
+                        alt="postImages"
+                      />
+                    </div>
                   ))}
                 </div>
               )}
               {imgLinkEdit && imgLinkEdit.length && (
                 <div className="row">
                   {imgLinkEdit.slice(2, 4).map((imgLink, index) => (
-                    <img
-                      key={index + 2}
-                      src={imgLink}
-                      className="collage-image"
-                      alt="postImages"
-                    />
+                    <div key={index + 2} className="collage-item">
+                      <img
+                        src={imgLink}
+                        className="collage-image"
+                        alt="postImages"
+                      />
+                    </div>
                   ))}
                 </div>
               )}
             </div>
           </Slider>
+
 
 
           {editable && (
