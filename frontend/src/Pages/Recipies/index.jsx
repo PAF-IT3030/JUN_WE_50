@@ -52,7 +52,7 @@ function Recipies() {
       uploadTask.on(
         "state_changed",
         (snapshot) => {
-          Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+          Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100); //rounding
         },
         (err) => console.log(err), // error
         () => {
@@ -69,14 +69,14 @@ function Recipies() {
     <div className="recipe" style={{ backgroundImage: 'url("https://www.shutterstock.com/image-photo/food-background-spices-herbs-utensil-260nw-2255294345.jpg")', backgroundSize: 'cover', backgroundPosition: 'center', width: '100%' , height: '100%'}}>
       <div className="card-body" >
         <form onSubmit={handleSubmit}>
-          <center><h1 className="mt-2">Eat Healthy</h1></center>
+          <center><h1 className="mt-2">Eat Healthy </h1> </center> 
           <div style={{height: '30px'}}></div>
           <center><h2 className="mt-2">Share Your all Recipies With Us </h2>
           <div className="mt-2 mb-3">
             <label className="form-label "></label>
             <input
               type="text"
-              style={{marginTop: '50px', width: '500px'}}
+              style={{marginTop: '50px', width: '500px'}} // styles
               className="form-control"
               placeholder="Please Enter the recipe name"
               value={caption}
