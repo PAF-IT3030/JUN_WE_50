@@ -9,6 +9,7 @@ function Recipies() { // class
   const dispatch = useDispatch(); // dispatch
   const user = useSelector((state) => state.user); // user
   const fileInputRef = useRef(null ); // constfil
+  
 
   const [caption, setCaption] = React.useState(""); //usestate
   const [imgLink, setImgLink] = React.useState(""); //set state2
@@ -25,7 +26,7 @@ function Recipies() { // class
     await dispatch (savePost(post)); // post
     await dispatch(getPostsByUserId(user.userId)); //id
     setCaption(""); // set caption
-    
+
     setImgLink(""); // set image
     setDesc(""); // set description
     fileInputRef.current.value = ""; // fileinput
