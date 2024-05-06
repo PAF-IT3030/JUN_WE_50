@@ -1,6 +1,7 @@
 package com.paf.socialmedia.service;
 
 import com.paf.socialmedia.document.Comment;
+import com.paf.socialmedia.document.Comment_workout;
 import com.paf.socialmedia.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
