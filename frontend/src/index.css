@@ -118,7 +118,7 @@ code {
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.774); /* Add a black background */
 }
 
