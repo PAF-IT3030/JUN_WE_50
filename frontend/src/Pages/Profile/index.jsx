@@ -86,6 +86,7 @@ function Profile(props) {
       <hr style={{color:"white"}}/>
       
       <center>
+        
         <div style={{height:"250px", width:"250px"}}></div>
       </center>
       <div className="container">
