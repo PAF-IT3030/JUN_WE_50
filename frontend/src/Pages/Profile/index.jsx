@@ -182,7 +182,7 @@ function Profile(props) {
                   props.closeModal();
                 }}
               >
-                CANCEL
+              CANCEL
               </button>
               <button
                 type="submit"
