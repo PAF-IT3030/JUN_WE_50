@@ -47,7 +47,7 @@ function Recipies() {
       const file = files[i];
       const storageRef = ref(storage, `/posts/${file.name}`);
   
-      const uploadTask = uploadBytesResumable(storageRef, file);
+      const uploadTask = uploadBytesResumable(storageRef, file); //task uplosad
   
       uploadTask.on(
         "state_changed",
