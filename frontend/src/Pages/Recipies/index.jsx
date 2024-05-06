@@ -70,7 +70,7 @@ function Recipies() { // class
   return (
     <div className="recipe" style={{ backgroundImage: 'url("https://www.shutterstock.com/image-photo/food-background-spices-herbs-utensil-260nw-2255294345.jpg")', backgroundSize: 'cover', backgroundPosition: 'center', width: '100%' , height: '100%'}}>
       <div className="card-body" > 
-      
+
         <form onSubmit={handleSubmit}>
           <center><h1 className="mt-2">Eat Healthy </h1> </center> 
           <div style={{height: '30px'}}></div>
@@ -88,6 +88,7 @@ function Recipies() { // class
 
               onChange={(e) =>  setCaption  (e.target.value)} // onchange
             />
+            
             <br></br>
             <input // inpt
 
