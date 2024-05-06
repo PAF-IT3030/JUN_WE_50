@@ -89,11 +89,11 @@ function Recipies() { // class
             />
             <br></br>
             <input 
-            
+
               type="text" 
               style={{marginTop: '10px',  width: '501px'}} // styles
               className="form-control " // classname
-              placeholder=" Please Enter the recipe description " //placeholder
+              placeholder=" Please Enter the recipe description  " //placeholder
               value={desc} // value
               onChange={(e) => setDesc(e.target.value)} //setdesc value
             />
