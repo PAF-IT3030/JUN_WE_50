@@ -214,7 +214,7 @@ function PostCard({ post, fetchType }) {
   const toggleFullText = () => {
     setShowFullText(!showFullText);
   };
-
+// design post card ui
   return (
     <div className="card mb-4 post">
       <div className="card-body">

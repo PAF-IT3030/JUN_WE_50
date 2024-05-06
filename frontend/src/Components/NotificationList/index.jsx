@@ -27,7 +27,7 @@ function NotificationDropdown() {
     };
     dispatch(updateNotificationsById(updateNotification));
   };
-
+// notification design part
   return (
     <div className="card p-3 post">
       <h4>Notifications</h4>
