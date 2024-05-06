@@ -10,7 +10,7 @@ import User from "./Pages/User";
 import SharedPosts from "./Pages/SharedPosts";
 import Profile from "./Pages/Profile";
 import UserPosts from "./Pages/UserPosts";
-import Meals from "../src/Pages/Workouts/index"
+import Meals from "../src/Pages/Workouts/"
 
 function App() {
   return (
