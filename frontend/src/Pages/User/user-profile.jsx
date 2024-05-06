@@ -5,7 +5,7 @@ import UserImage from "../../assets/user.jpeg";
 function UserProfile() {
   const user = useSelector((state) => state.user.user);
   return (
-    <div className="card post-card">
+    <div className="card post">
       <div className="card-body text-center">
         <img
           className="img-circle user-image image-fluid mb-3"

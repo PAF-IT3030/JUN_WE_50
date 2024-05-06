@@ -65,19 +65,7 @@ function Navbar() {
             <span className="navbar-toggler-icon"></span>
           </button>
 
-          <div className="d-flex align-items-center">
-            <input
-              type="text"
-              placeholder="Search"
-              className="form-control me-2"
-            />
-            <button className="btn btn-primary"><i class="fas fa-search"></i>Search</button>
-          </div>
           
-
-
-
-
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0"></ul>
