@@ -13,7 +13,7 @@ function Register() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+//-------
     if (!username || !password || !confirmPassword) {
       setError("All fields are required");
       return;
@@ -58,7 +58,7 @@ function Register() {
             <br></br>   
 
             <label style={{ color: "white"}} htmlFor="password">Password</label>
-            
+
             <input
               type="password"
               id="password"
