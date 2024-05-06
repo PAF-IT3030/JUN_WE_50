@@ -96,7 +96,7 @@ function Recipies() {
           <div className="mb-3">
             {imgLink && (
               <img
-                src={imgLink}
+                src={imgLink} // imglink
                 className="img-fluid me-3"
                 
                 alt="Profile"
