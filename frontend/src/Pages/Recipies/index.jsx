@@ -62,6 +62,7 @@ function Recipies() { // class
             //setImglink
           });
         }
+        
       );
     }
   };
