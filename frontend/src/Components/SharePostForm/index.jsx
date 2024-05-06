@@ -19,6 +19,7 @@ function SharePostForm(props) {
   };
 
   return (
+    // display shared post.
     <div>
       <label className="form-label">
         Add a caption you want to share with this post
