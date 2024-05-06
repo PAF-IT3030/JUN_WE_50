@@ -18,11 +18,11 @@ function Recipies() {
     e.preventDefault();
     const post = {
       userId: user.userId, //userID
-      caption,
+      caption, //caption
       imgLink,
       desc,
     };
-    await dispatch(savePost(post));
+    await dispatch (savePost(post));
     await dispatch(getPostsByUserId(user.userId));
     setCaption(""); // set caption
     setImgLink(""); // set image
@@ -80,12 +80,12 @@ function Recipies() {
               className="form-control"
               placeholder="Please Enter the recipe name"
               value={caption}
-              onChange={(e) => setCaption(e.target.value)}
+              onChange={(e) =>  setCaption(e.target.value)}
             />
             <br></br>
             <input 
               type="text"
-              style={{marginTop: '10px', width: '500px'}}
+              style={{marginTop: '10px',  width: '500px'}}
               className="form-control"
               placeholder=" Please Enter the recipe description"
               value={desc}
