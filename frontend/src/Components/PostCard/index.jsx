@@ -37,7 +37,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
 Modal.setAppElement("div");
 const customStyles = {
   content: {
@@ -50,6 +49,8 @@ const customStyles = {
   },
 };
 
+const MAX_CHARACTERS = 200;
+
 const getUserByIdFunc = (users, userId) => {
   const result = users.filter(function (el) {
     return el.id === userId;
@@ -57,7 +58,6 @@ const getUserByIdFunc = (users, userId) => {
 
   return result ? result[0] : null; // or undefined
 };
-
 
 function PostCard({ post, fetchType }) {
   const dispatch = useDispatch();
@@ -68,6 +68,7 @@ function PostCard({ post, fetchType }) {
   const [imgLinkEdit, setImgLinkEdit] = React.useState(post.imgLink);
   const [comment, setComment] = React.useState("");
   const [isLiked, setIsLiked] = React.useState(false);
+  const [showFullText, setShowFullText] = useState(false);
 
   function openModal() {
     setModalIsOpen(true);
@@ -210,6 +211,10 @@ function PostCard({ post, fetchType }) {
     await dispatch(saveNotification(newNotification));
   };
 
+  const toggleFullText = () => {
+    setShowFullText(!showFullText);
+  };
+
   return (
     <div className="card mb-4 post">
       <div className="card-body">
@@ -276,8 +281,20 @@ function PostCard({ post, fetchType }) {
         </div>
         <hr />
         <div className="row">
-          {!editable && <p>{post.caption}</p>}
-
+          <pre>
+            {!editable && (
+              <div>
+                <p>
+                  {showFullText ? post.caption : post.caption.slice(0, MAX_CHARACTERS)}
+                </p>
+                {post.caption.length > MAX_CHARACTERS && (
+                  <button onClick={toggleFullText} style={{border:"none"}}>
+                    {showFullText ? "See less" : "See more..."}
+                  </button>
+                )}
+              </div>
+            )}
+          </pre>
           {editable && (
             <input
               type="text"
@@ -318,8 +335,6 @@ function PostCard({ post, fetchType }) {
               )}
             </div>
           </Slider>
-
-
 
           {editable && (
             <input
