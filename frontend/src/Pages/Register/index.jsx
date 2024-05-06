@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { register } from "../../app/actions/user.actions";
 import "./Register.css"; // Import CSS file for styling
 
+
 //Register Function
 function Register() {
   const dispatch = useDispatch();
