@@ -18,15 +18,20 @@ public class WorkoutCommentController {
     public ResponseEntity<?> getWorkoutCommentById(@PathVariable String id){
         return workoutCommentService.getWorkoutCommentById(id);
     }
+    
+    //Get data from id
     @GetMapping
     public ResponseEntity<?> getWorkoutComments(){
         return workoutCommentService.getWorkoutComments();
     }
 
+    //Get data from id
     @GetMapping("/workout/{id}")
     public ResponseEntity<?> getWorkoutCommentsByWorkout(@PathVariable String id){
         return workoutCommentService.getWorkoutCommentsByWorkout(id);
     }
+
+    //Get data from id
     @PostMapping
     public ResponseEntity<?> saveWorkoutComment(@RequestBody WorkoutComment workoutComment){
         return workoutCommentService.saveWorkoutComment(workoutComment);
