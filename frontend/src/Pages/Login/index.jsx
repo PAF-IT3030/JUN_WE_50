@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { login } from "../../app/actions/user.actions";
 import "./Login.css"; // Import CSS file for animations
 
+//login
 function Login() {
   const dispatch = useDispatch();
   const [username, setUsername] = React.useState("");
@@ -54,7 +55,7 @@ function Login() {
                 LOGIN
               </button>
             </form>
-            <hr />
+            
             <Link to="/signup" className="text-decoration-none" style={{ color: "white", fontSize: "1rem" }}>
               If you haven't an account. Create new account
             </Link>
