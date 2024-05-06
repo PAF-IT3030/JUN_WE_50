@@ -14,7 +14,7 @@ function Recipies() { // class
   const [caption, setCaption] = React.useState(""); //usestate
   const [imgLink, setImgLink] = React.useState(""); //set state2
   const [desc, setDesc] = React.useState(""); //setstate3
-  
+
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // preventdef
@@ -24,6 +24,7 @@ function Recipies() { // class
       imgLink, //imglinl
       desc, //desc
     };
+    
     await dispatch (savePost(post)); // post
     await dispatch(getPostsByUserId(user.userId)); //id
     setCaption(""); // set caption
