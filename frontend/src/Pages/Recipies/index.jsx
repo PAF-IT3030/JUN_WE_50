@@ -97,7 +97,7 @@ function Recipies() {
             {imgLink && (
               <img
                 src={imgLink} // imglink
-                className="img-fluid me-3"
+                className="img-fluid me-3" // classname
                 
                 alt="Profile"
               />
