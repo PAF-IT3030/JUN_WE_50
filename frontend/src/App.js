@@ -9,8 +9,8 @@ import Home from "./Pages/Home";
 import User from "./Pages/User";
 import SharedPosts from "./Pages/SharedPosts";
 import Profile from "./Pages/Profile";
-import UserPosts from "./Pages/UserPosts";
-import Meals from "../src/Pages/Workouts/";
+import UserPosts from "./Pages/UserPosts"; // post
+import Meals from "../src/Pages/Workouts/"; // meal
 
 function App() {
     return (

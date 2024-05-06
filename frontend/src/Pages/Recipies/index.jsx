@@ -120,6 +120,7 @@ function Recipies() { // class
           <br></br> 
 
           <center><button style={{marginBottom: '200px'}} type="submit" className="btn btn-outline-primary"> 
+          
             POST 
           </button></center> 
 
