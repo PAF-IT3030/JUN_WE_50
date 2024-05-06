@@ -84,11 +84,12 @@ function Recipies() { // class
               className="form-control " // classname
               placeholder="Please Enter the recipe name " // name
               value={caption} // value
-              
+
               onChange={(e) =>  setCaption  (e.target.value)} // onchange
             />
             <br></br>
             <input 
+            
               type="text" 
               style={{marginTop: '10px',  width: '501px'}} // styles
               className="form-control " // classname
