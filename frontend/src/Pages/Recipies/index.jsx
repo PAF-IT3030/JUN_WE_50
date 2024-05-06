@@ -84,6 +84,7 @@ function Recipies() { // class
               className="form-control " // classname
               placeholder="Please Enter the recipe name " // name
               value={caption} // value
+              
               onChange={(e) =>  setCaption  (e.target.value)} // onchange
             />
             <br></br>
