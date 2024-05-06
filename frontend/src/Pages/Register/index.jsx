@@ -46,7 +46,7 @@ function Register() {
         <form onSubmit={handleSubmit}>
           
             <label style={{ color: "white"}} htmlFor="username">Username</label>
-            
+
             <input
               type="text"
               id="username"
@@ -58,6 +58,7 @@ function Register() {
             <br></br>   
 
             <label style={{ color: "white"}} htmlFor="password">Password</label>
+            
             <input
               type="password"
               id="password"
