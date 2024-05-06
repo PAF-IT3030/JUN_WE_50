@@ -89,7 +89,7 @@ function Recipies() {
               className="form-control "
               placeholder=" Please Enter the recipe description " //placeholder
               value={desc}
-              onChange={(e) => setDesc(e.target.value)}
+              onChange={(e) => setDesc(e.target.value)} //setdesc value
             />
           </div>
             <i>*maximum 4 images </i>
