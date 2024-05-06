@@ -58,7 +58,7 @@ function Recipies() { // class
         (err) => console.log(err), // error
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((url) => {
-            setImgLink((prevLinks) => [...prevLinks,  url]); 
+            setImgLink((prevLinks) => [...prevLinks,  url]); // setimglink
             //setImglink
           });
         }
