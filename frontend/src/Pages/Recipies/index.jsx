@@ -86,13 +86,13 @@ function Recipies() {
             <input 
               type="text"
               style={{marginTop: '10px',  width: '501px'}}
-              className="form-control"
+              className="form-control "
               placeholder=" Please Enter the recipe description "
               value={desc}
               onChange={(e) => setDesc(e.target.value)}
             />
           </div>
-            <i>*maximum 4 images</i>
+            <i>*maximum 4 images </i>
           <div className="mb-3">
             {imgLink && (
               <img
@@ -105,7 +105,7 @@ function Recipies() {
 
             <input
               type="file"
-              className="form-control"
+              className="form-control "
               style={{width: '500px'}}
               onChange={(e) => uploadImage(e)}
               ref={fileInputRef}
@@ -116,7 +116,7 @@ function Recipies() {
           <br></br>
 
           <center><button style={{marginBottom: '200px'}} type="submit" className="btn btn-outline-primary">
-            POST
+            POST 
           </button></center>
         </form>
       </div>
