@@ -62,7 +62,7 @@ function PostAdd() {
   
   
   return (
-    <div className="container mb-3 card create-card">
+    <div className="container mb-3 card create">
       <div className="card-body">
         <form onSubmit={handleSubmit}>
           <h1 className="mt-2">Share your thoughts</h1>

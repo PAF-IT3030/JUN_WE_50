@@ -127,8 +127,22 @@ code {
   max-height: 100%;
   object-fit: cover;
   border-radius: 10px;
-  border: solid rgb(12, 12, 12) 1px;
+  border: solid rgba(139, 139, 139, 0.788) 2px;
 
 }
 
+.btn-follow{
+  
+  border: none;
+  color: #1100ff;
+  background-color: white;
+  border: solid 1px #1100ff;
 
+}
+
+.btn-follow:hover{
+  background-color: #1100ff;
+  color: white;
+  
+  transition: 0.5s;
+}
