@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getPostsByUserId, savePost } from "../../app/actions/post.actions";
 import storage from "../../util/firebaseConfig";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import './recipies.css';
+import './recipies.css'; // css
 
 function Recipies() { // class
   const dispatch = useDispatch(); // dispatch
@@ -77,12 +77,12 @@ function Recipies() { // class
             <label className="form-label "></label>
 
             <input
-              type="text"
+              type="text "
               style={{marginTop: '50px', width: '500px'}} // styles
               className="form-control"
               placeholder="Please Enter the recipe name" 
               value={caption}
-              onChange={(e) =>  setCaption (e.target.value)}
+              onChange={(e) =>  setCaption  (e.target.value)}
             />
             <br></br>
             <input 
