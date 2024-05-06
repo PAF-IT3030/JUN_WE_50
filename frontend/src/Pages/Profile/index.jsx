@@ -85,7 +85,6 @@ function Profile(props) {
       
       <h1 className="text-center" style={{ fontFamily:"cursive", color:"white"}}>Update Profile</h1>
       <hr style={{color:"white"}}/>
-      
       <center>
         <div style={{height:"250px", width:"250px"}}></div>
       </center>
