@@ -5,13 +5,15 @@ import { deleteUserById } from "../../app/actions/user.actions";
 import storage from "../../util/firebaseConfig";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
-
+//profile function
 function Profile(props) {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   
+  // State for success message
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
-  const [username, setUsername] = useState(user?.user?.username);
+  const [username, setUsername] = useState(user?.user?.username);// Disable to update username
   const [email, setEmail] = useState(user?.user?.email);
   const [contactNumber, setContactNumber] = useState(user?.user?.contactNumber);
   const [country, setCountry] = useState(user?.user?.country);
@@ -32,6 +34,12 @@ function Profile(props) {
     };
 
     dispatch(updateUserById(userUpdate));
+
+    // Show success message
+    setShowSuccessMessage(true);
+    setTimeout(() => {
+      setShowSuccessMessage(false);
+    }, 3000); // Hide success message after 3 seconds
 
     props.closeModal();
   };
@@ -54,8 +62,6 @@ function Profile(props) {
 
     const storageRef = ref(storage, `/users/${file.name}`);
 
-    // progress can be paused and resumed. It also exposes progress updates.
-    // Receives the storage reference and the file to upload.
     const uploadTask = uploadBytesResumable(storageRef, file);
 
     uploadTask.on(
@@ -65,7 +71,6 @@ function Profile(props) {
       },
       (err) => console.log(err),
       () => {
-        // download url
         getDownloadURL(uploadTask.snapshot.ref).then((url) => {
           setProfileImage(url);
         });
@@ -74,7 +79,8 @@ function Profile(props) {
   };
 
   return (
-    <div style={{ backgroundImage: `url('https://wallpaperset.com/w/full/a/3/d/45475.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center', borderRadius: "10px", boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)" }}>
+    // Background image come from google
+    <div style={{ backgroundImage: `url('https://wallpaperset.com/w/full/a/3/d/45475.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center', borderRadius: "10px", boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)" }}> 
       
       <h1 className="text-center" style={{ fontFamily:"cursive", color:"white"}}>Update Profile</h1>
       <hr style={{color:"white"}}/>
@@ -187,6 +193,12 @@ function Profile(props) {
                 Delete
               </button>
             </form>
+            {/* Success message */}
+            {showSuccessMessage && (
+              <div className="alert alert-success" role="alert">
+                Profile updated successfully!
+              </div>
+            )}
           </div>
         </div>
       </div>
