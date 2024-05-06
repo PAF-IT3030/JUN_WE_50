@@ -104,7 +104,7 @@ function Recipies() {
             )}
 
             <input
-              type="file"
+              type="file" // title
               className="form-control " // classname
               style={{width: '500px'}} //styles
               onChange={(e) => uploadImage(e)} // uploadimg
