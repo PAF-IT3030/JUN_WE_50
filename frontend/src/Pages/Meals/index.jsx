@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Posts from "../../Components/Posts";
 import { useDispatch, useSelector } from "react-redux";
 import { getPostsByUserId } from "../../app/actions/post.actions";
-import PostAdd from "../../Components/PostWorkout/index";
+import PostAdd from "../../Components/PostMeals/index";
 import UserProfile from "./user-profile";
 import SharedPosts from "../SharedPosts";
 import Notifications from "../../Components/NotificationList";
@@ -25,7 +25,7 @@ function User() {
         <UserProfile />
       </div>
 
-      <div className="col-md-9">
+      <div className="col-md-7">
         <PostAdd />
         {/* <nav>
           <div class="nav nav-tabs " id="nav-tab" role="tablist">

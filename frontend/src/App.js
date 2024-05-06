@@ -10,7 +10,9 @@ import User from "./Pages/User";
 import SharedPosts from "./Pages/SharedPosts";
 import Profile from "./Pages/Profile";
 import UserPosts from "./Pages/UserPosts";
-import Meals from "../src/Pages/Workouts/index"
+
+import Workout from "../src/Pages/Workouts/index"
+import Meals from "../src/Pages/Meals/index"
 
 function App() {
   return (
@@ -27,7 +29,9 @@ function App() {
             <Route path="/signup" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/workout" element={<Meals />} />
-            <Route path="/workout" element={<Meals />} />
+            
+            <Route path="/workout" element={<Workout />} />
+            <Route path="/mealplans" element={<Meals />} />
           </Routes>
         </div>
       </Router>

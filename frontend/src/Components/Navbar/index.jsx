@@ -77,11 +77,11 @@ function Navbar() {
                 <Link className="nav-link me-3" to="/user">
                   Profile
                 </Link>
-                <Link className="nav-link me-3" to="/mealplanning">
-                  Meal Planning
+                <Link className="nav-link me-3" to="/mealplans">
+                  Meal Plan
                 </Link>
-                <Link className="nav-link me-3" to="/recipies">
-                  Recipies
+                <Link className="nav-link me-3" to="/workout">
+                  Workout
                 </Link>
                 <NotificationDropdown />
                 <button
