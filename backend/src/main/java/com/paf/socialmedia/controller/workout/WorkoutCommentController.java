@@ -40,6 +40,8 @@ public class WorkoutCommentController {
     public ResponseEntity<?> updateWorkoutCommentById(@PathVariable String id, @RequestBody WorkoutComment workoutComment){
         return  workoutCommentService.updateWorkoutCommentById(id,workoutComment);
     }
+
+    
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteWorkoutCommentById(@PathVariable String id){
         return workoutCommentService.deleteWorkoutCommentById(id);
