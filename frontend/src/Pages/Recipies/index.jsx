@@ -23,7 +23,7 @@ function Recipies() { // class
       desc, //desc
     };
     await dispatch (savePost(post)); // post
-    await dispatch(getPostsByUserId(user.userId));
+    await dispatch(getPostsByUserId(user.userId)); //id
     setCaption(""); // set caption
     setImgLink(""); // set image
     setDesc(""); // set description
