@@ -31,7 +31,7 @@ function Home() {
               {/* You can add a status update form here */}
             </div>
             <div className="" style={{marginRight:"10px",marginTop:"2px"}}>
-              {/* News Feed */}
+              {/* News Feed was displayed */}
               <Posts posts={post.posts} fetchType="GET_ALL_POSTS" />
             </div>
           </div>
