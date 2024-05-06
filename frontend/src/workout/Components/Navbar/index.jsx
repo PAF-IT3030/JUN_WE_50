@@ -77,9 +77,6 @@ function Navbar() {
                 <Link className="nav-link me-3" to="/user">
                   Profile
                 </Link>
-                <Link className="nav-link me-3" to="/workout">
-                  Workout
-                </Link>
                 <NotificationDropdown />
                 <button
                   className="btn btn-outline-danger me-3"
