@@ -106,7 +106,7 @@ function Recipies() {
             <input
               type="file"
               className="form-control "
-              style={{width: '500px'}}
+              style={{width: '500px'}} //styles
               onChange={(e) => uploadImage(e)} // uploadimg
               ref={fileInputRef}
               multiple 
@@ -117,7 +117,7 @@ function Recipies() {
 
           <center><button style={{marginBottom: '200px'}} type="submit" className="btn btn-outline-primary">
             POST 
-          </button></center>
+          </button></center> 
         </form>
       </div>
     </div>
