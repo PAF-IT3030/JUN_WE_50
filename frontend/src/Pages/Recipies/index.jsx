@@ -19,7 +19,7 @@ function Recipies() {
     const post = {
       userId: user.userId, //userID
       caption, //caption
-      imgLink,
+      imgLink, //imglinl
       desc,
     };
     await dispatch (savePost(post));
