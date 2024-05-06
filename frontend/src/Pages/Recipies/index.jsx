@@ -104,7 +104,7 @@ function Recipies() { // class
             {imgLink && (
               
               <img
-              
+
                 src={imgLink} // imglink
                 className="img-fluid me-3" // classname
                 alt="Profile" // profile
@@ -126,6 +126,7 @@ function Recipies() { // class
           <center><button style={{marginBottom: '200px'}} type="submit" className="btn btn-outline-primary"> 
             POST  
           </button></center> 
+          
 
         </form> 
       </div>
