@@ -24,7 +24,7 @@ function Recipies() {
     };
     await dispatch(savePost(post));
     await dispatch(getPostsByUserId(user.userId));
-    setCaption("");
+    setCaption(""); // set caption
     setImgLink("");
     setDesc("");
     fileInputRef.current.value = "";
