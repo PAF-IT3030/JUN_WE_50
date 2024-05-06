@@ -86,13 +86,12 @@ function Profile(props) {
       <hr style={{color:"white"}}/>
       
       <center>
-        
+
         <div style={{height:"250px", width:"250px"}}></div>
       </center>
       <div className="container">
         <div className="row mt-5">
           <div className="col-md-6 offset-md-3">
-            
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
                 <label style={{color:"white"}} htmlFor="username" className="form-label">
