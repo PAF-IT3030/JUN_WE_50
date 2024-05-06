@@ -5,7 +5,7 @@ import storage from "../../util/firebaseConfig";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import './recipies.css';
 
-function Recipies() {
+function Recipies() { // class
   const dispatch = useDispatch(); // dispatch
   const user = useSelector((state) => state.user); // user
   const fileInputRef = useRef(null ); // constfil
