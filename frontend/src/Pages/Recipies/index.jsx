@@ -5,59 +5,59 @@ import storage from "../../util/firebaseConfig";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import './recipies.css';
 
-function Recipies() {
-  const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
-  const fileInputRef = useRef(null);
+function Recipies() { // class
+  const dispatch = useDispatch(); // dispatch
+  const user = useSelector((state) => state.user); // user
+  const fileInputRef = useRef(null ); // constfil
 
-  const [caption, setCaption] = React.useState("");
-  const [imgLink, setImgLink] = React.useState("");
-  const [desc, setDesc] = React.useState("");
+  const [caption, setCaption] = React.useState(""); //usestate
+  const [imgLink, setImgLink] = React.useState(""); //set state2
+  const [desc, setDesc] = React.useState(""); //setstate3
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); // preventdef
     const post = {
-      userId: user.userId,
-      caption,
-      imgLink,
-      desc,
+      userId: user.userId, //userID
+      caption, //caption
+      imgLink, //imglinl
+      desc, //desc
     };
-    await dispatch(savePost(post));
-    await dispatch(getPostsByUserId(user.userId));
-    setCaption("");
-    setImgLink("");
-    setDesc("");
-    fileInputRef.current.value = "";
+    await dispatch (savePost(post)); // post
+    await dispatch(getPostsByUserId(user.userId)); //id
+    setCaption(""); // set caption
+    setImgLink(""); // set image
+    setDesc(""); // set description
+    fileInputRef.current.value = ""; // fileinput
 
   };
 
-  const uploadImage = (e) => {
-    const files = e.target.files;
+  const uploadImage = (e) => { // upload image
+    const files = e.target.files; // constfile
   
     if (files.length === 0) {
-      alert("Please upload at least one image!");
+      alert("Please upload at least one image!"); // alermsg
       return;
     }
   
     // upload up to 4 images
-    const maxImages = 4;
-    const numImages = Math.min(maxImages, files.length);
+    const maxImages = 4; //max 4 files
+    const numImages = Math.min(maxImages, files.length); // numimgs
   
     for (let i = 0; i < numImages; i++) {
-      const file = files[i];
-      const storageRef = ref(storage, `/posts/${file.name}`);
+      const file = files[i]; // filearr
+      const storageRef = ref(storage, `/posts/${file.name}`); //storage
   
-      const uploadTask = uploadBytesResumable(storageRef, file);
+      const uploadTask = uploadBytesResumable(storageRef, file); //task uplosad
   
       uploadTask.on(
         "state_changed",
         (snapshot) => {
-          Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+          Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100); //rounding
         },
-        (err) => console.log(err),
+        (err) => console.log(err), // error
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((url) => {
-            setImgLink((prevLinks) => [...prevLinks, url]);
+            setImgLink((prevLinks) => [...prevLinks, url]); //setImglink
           });
         }
       );
@@ -67,48 +67,48 @@ function Recipies() {
   
   return (
     <div className="recipe" style={{ backgroundImage: 'url("https://www.shutterstock.com/image-photo/food-background-spices-herbs-utensil-260nw-2255294345.jpg")', backgroundSize: 'cover', backgroundPosition: 'center', width: '100%' , height: '100%'}}>
-      <div className="card-body" >
-        <form onSubmit={handleSubmit}>
-          <center><h1 className="mt-2">Eat Healthy</h1></center>
+      <div className="card-body" > 
+        <form onSubmit={handleSubmit}> 
+          <center><h1 className="mt-2">Eat Healthy </h1> </center> 
           <div style={{height: '30px'}}></div>
-          <center><h2 className="mt-2">Share Your Recipies With Us</h2>
+          <center><h2 className="mt-2">Share Your all Recipies With Us </h2>
           <div className="mt-2 mb-3">
-            <label className="form-label"></label>
+            <label className="form-label "></label>
             <input
               type="text"
-              style={{marginTop: '50px', width: '500px'}}
+              style={{marginTop: '50px', width: '500px'}} // styles
               className="form-control"
               placeholder="Please Enter the recipe name"
               value={caption}
-              onChange={(e) => setCaption(e.target.value)}
+              onChange={(e) =>  setCaption(e.target.value)}
             />
             <br></br>
             <input 
               type="text"
-              style={{marginTop: '10px', width: '500px'}}
-              className="form-control"
-              placeholder=" Please Enter the recipe description"
+              style={{marginTop: '10px',  width: '501px'}} // styles
+              className="form-control " // classname
+              placeholder=" Please Enter the recipe description " //placeholder
               value={desc}
-              onChange={(e) => setDesc(e.target.value)}
+              onChange={(e) => setDesc(e.target.value)} //setdesc value
             />
           </div>
-            <i>*maximum 4 images</i>
+            <i>*maximum 4 images </i>
           <div className="mb-3">
             {imgLink && (
               <img
-                src={imgLink}
-                className="img-fluid me-3"
+                src={imgLink} // imglink
+                className="img-fluid me-3" // classname
                 
-                alt="Profile"
+                alt="Profile" // profile
               />
             )}
 
             <input
-              type="file"
-              className="form-control"
-              style={{width: '500px'}}
-              onChange={(e) => uploadImage(e)}
-              ref={fileInputRef}
+              type="file" // title
+              className="form-control " // classname
+              style={{width: '500px'}} //styles
+              onChange={(e) => uploadImage(e)} // uploadimg
+              ref={fileInputRef} // fileref
               multiple 
             />
           </div></center>
@@ -116,8 +116,8 @@ function Recipies() {
           <br></br>
 
           <center><button style={{marginBottom: '200px'}} type="submit" className="btn btn-outline-primary">
-            POST
-          </button></center>
+            POST 
+          </button></center> 
         </form>
       </div>
     </div>
