@@ -95,6 +95,7 @@ function Recipies() { // class
             />
           </div>
             <i>*maximum 4 images </i>
+            
           <div className="mb-3">
             {imgLink && (
               <img
@@ -120,7 +121,7 @@ function Recipies() { // class
           <center><button style={{marginBottom: '200px'}} type="submit" className="btn btn-outline-primary"> 
             POST 
           </button></center> 
-          
+
         </form>
       </div>
     </div>
