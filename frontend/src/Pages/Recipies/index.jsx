@@ -111,11 +111,11 @@ function Recipies() { // class
               style={{width: '500px'}} //styles
               onChange={(e) => uploadImage(e)} // uploadimg
               ref={fileInputRef} // fileref
-              multiple 
+              multiple  // multi
             />
           </div></center>
 
-          <br></br>
+          <br></br> 
 
           <center><button style={{marginBottom: '200px'}} type="submit" className="btn btn-outline-primary">
             POST 
