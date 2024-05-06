@@ -191,7 +191,6 @@ function Profile(props) {
                 Delete
               </button>
             </form>
-            
             {showSuccessMessage && (
               <div className="alert alert-success" role="alert">
                 Profile updated successfully!!
