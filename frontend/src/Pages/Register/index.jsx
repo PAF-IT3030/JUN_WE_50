@@ -33,8 +33,9 @@ function Register() {
   };
   return (
     <div className="register-container" style={{ backgroundImage: `url('https://t4.ftcdn.net/jpg/03/50/81/89/360_F_350818949_lJTfzSTDr79e9Kn55PUVZjN19ct20uGc.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center', borderRadius: "10px", boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)" }}>
+        
         <div className="register-container animated fadeIn"> {/* Apply fadeIn animation class */}
-        <div className="loginform">
+        <div className="loginform" style={{marginRight:"700px"}}>
           <center>
         <h1 style={{ color: "white", fontFamily:"cursive", fontSize: "2.5rem", fontWeight: "bold"}}>SIGN UP</h1></center>
         {error && <div className="error">{error}</div>}
@@ -78,8 +79,9 @@ function Register() {
           </button>
         </form>
       </div>
+      </div>
     </div>
-    </div>
+    
   );
 }  
 
