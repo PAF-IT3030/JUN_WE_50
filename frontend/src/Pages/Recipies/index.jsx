@@ -76,7 +76,7 @@ function Recipies() { // class
           <center><h2 className="mt-2">Share Your all Recipies With Us </h2>
           <div className="mt-2 mb-3">
             <label className="form-label "></label>
-            
+
 
             <input
               type="text " // type
@@ -92,7 +92,7 @@ function Recipies() { // class
               style={{marginTop: '10px',  width: '501px'}} // styles
               className="form-control " // classname
               placeholder=" Please Enter the recipe description " //placeholder
-              value={desc}
+              value={desc} // value
               onChange={(e) => setDesc(e.target.value)} //setdesc value
             />
           </div>
@@ -121,10 +121,10 @@ function Recipies() { // class
           
 
           <center><button style={{marginBottom: '200px'}} type="submit" className="btn btn-outline-primary"> 
-            POST 
+            POST  
           </button></center> 
 
-        </form>
+        </form> 
       </div>
     </div>
 
