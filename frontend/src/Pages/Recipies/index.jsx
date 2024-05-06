@@ -74,7 +74,7 @@ function Recipies() { // class
           <div style={{height: '30px'}}></div>
           <center><h2 className="mt-2">Share Your all Recipies With Us </h2>
           <div className="mt-2 mb-3">
-            <label className="form-label "></label>
+            <label className="form-label "></label> 
 
             <input
               type="text "
