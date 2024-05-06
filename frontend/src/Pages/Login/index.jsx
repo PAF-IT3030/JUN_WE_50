@@ -55,7 +55,7 @@ function Login() {
                 LOGIN
               </button>
             </form>
-            <hr />
+            
             <Link to="/signup" className="text-decoration-none" style={{ color: "white", fontSize: "1rem" }}>
               If you haven't an account. Create new account
             </Link>
