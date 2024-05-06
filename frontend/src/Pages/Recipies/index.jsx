@@ -107,7 +107,7 @@ function Recipies() {
               type="file"
               className="form-control "
               style={{width: '500px'}}
-              onChange={(e) => uploadImage(e)}
+              onChange={(e) => uploadImage(e)} // uploadimg
               ref={fileInputRef}
               multiple 
             />
