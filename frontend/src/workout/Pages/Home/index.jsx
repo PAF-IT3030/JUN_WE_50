@@ -24,10 +24,10 @@ function Home() {
           </div>
         </div>
         <div className="col-md-6">
-          {/* Main Content */}
+          {/* Main Content displayed*/}
           <div className="row">
             <div className="col-12">
-              {/* Status Update Form */}
+              {/* Status Update Form  this part*/}
               {/* You can add a status update form here */}
             </div>
             <div className="" style={{marginRight:"10px",marginTop:"2px"}}>
