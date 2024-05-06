@@ -187,7 +187,7 @@ function Profile(props) {
               <button
                 type="submit"
                 className="btn btn-outline-success w-100 mb-3">Update</button>
-                
+
               <button className="btn btn-outline-danger w-100 mb-3" onClick={() => handleDelete()}>
                 Delete
               </button>
@@ -195,7 +195,7 @@ function Profile(props) {
             {/* Success message */}
             {showSuccessMessage && (
               <div className="alert alert-success" role="alert">
-                Profile updated successfully!
+                Profile updated successfully!!
               </div>
             )}
           </div>
