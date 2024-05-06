@@ -82,6 +82,7 @@ function Recipies() { // class
 
 
             <input
+            
               type="text " // type
               style={{marginTop: '50px', width: '500px'}} // styles
               className="form-control " // classname
