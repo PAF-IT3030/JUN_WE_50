@@ -126,9 +126,8 @@ function Recipies() { // class
             POST 
           </button></center> 
 
-
         </form>
-        
+
       </div>
     </div>
 
