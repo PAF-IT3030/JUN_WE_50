@@ -110,6 +110,7 @@ function SharedPostCard({ post, fetchType }) {
           <p>{post.post?.caption}</p>
         </div>
         <div className="row">
+          {/* slider for shared post */}
         <Slider>
           {post.post?.imgLink && post.post.imgLink.length && post.post.imgLink.map((imgLink) => (
             <div key={imgLink}>

@@ -9,7 +9,7 @@ function Posts({posts,fetchType}) {
       setPostsList(posts);
     }
   },[posts]);
-
+// post display
   return (
     <div>
         {postsList.length ? [...postsList].reverse().map((post) => {
