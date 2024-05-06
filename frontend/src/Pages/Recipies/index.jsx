@@ -32,7 +32,7 @@ function Recipies() { // class
   };
 
   const uploadImage = (e) => { // upload image
-    const files = e.target.files;
+    const files = e.target.files; // constfile
   
     if (files.length === 0) {
       alert("Please upload at least one image!"); // alermsg
