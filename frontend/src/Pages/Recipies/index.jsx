@@ -48,8 +48,8 @@ function Recipies() { // class
     const maxImages =  4; //max 4 files
     const numImages = Math.min(maxImages, files.length); // numimgs
   
-    for (let i = 0; i < numImages; i++)// for loop {
-      const file = files[i]; // filearr
+    for (let i = 0; i < numImages; i++) {
+      const file = files[i]; 
       const storageRef  = ref(storage, `/posts /${file.name}`); //storage
   
       const uploadTask = uploadBytesResumable(storageRef, file); //task uplosad
@@ -64,13 +64,14 @@ function Recipies() { // class
           getDownloadURL(uploadTask.snapshot.ref).then((url) => { // getdownurl
             setImgLink((prevLinks) => [...prevLinks,  url]); // setimglink
             //setImglink
+
           });
         }
 
       
         );
     }
-  };
+  
   
   
   return (
@@ -144,5 +145,5 @@ function Recipies() { // class
     </div>
 
   );
-}
+            }
 export default Recipies;
