@@ -31,7 +31,7 @@ function Recipies() {
 
   };
 
-  const uploadImage = (e) => {
+  const uploadImage = (e) => { // upload image
     const files = e.target.files;
   
     if (files.length === 0) {
