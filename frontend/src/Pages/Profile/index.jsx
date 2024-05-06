@@ -5,7 +5,7 @@ import { deleteUserById } from "../../app/actions/user.actions";
 import storage from "../../util/firebaseConfig";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
-
+//profile function
 function Profile(props) {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
@@ -13,7 +13,7 @@ function Profile(props) {
   // State for success message
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
-  const [username, setUsername] = useState(user?.user?.username);
+  const [username, setUsername] = useState(user?.user?.username);// Disable to update username
   const [email, setEmail] = useState(user?.user?.email);
   const [contactNumber, setContactNumber] = useState(user?.user?.contactNumber);
   const [country, setCountry] = useState(user?.user?.country);
