@@ -99,11 +99,36 @@ code {
 
 
 .collage-image {
-  width: 40%; /* Ensure images fill the column */
-  height: 50%; /* Maintain aspect ratio */
+  width: 80%; /* Ensure images fill the column */
+  height: 100%; /* Maintain aspect ratio */
   margin-left: 30px;
 }
 
 
+.collage {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+}
+
+.collage-item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: rgba(0, 0, 0, 0.774); /* Add a black background */
+}
+
+.collage-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  border: solid white 1px;
+
+}
 
 

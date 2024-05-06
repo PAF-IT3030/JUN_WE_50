@@ -30,7 +30,9 @@ function NotificationDropdown() {
   };
 
   return (
-    <div className="notification-list">
+    <div className="row card p-3 post">
+      <h4>Notifications</h4>
+      <div className="notification-list">
       {notifications && notifications.length ? (
         <ul className="list-group">
           {[...notifications]
@@ -53,6 +55,7 @@ function NotificationDropdown() {
       ) : (
         <p>No Notifications yet</p>
       )}
+    </div>
     </div>
   );
 }
