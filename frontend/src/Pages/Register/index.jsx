@@ -12,6 +12,7 @@ function Register() {
   const [confirmPassword, setConfirmPassword] = React.useState("");
   const [error, setError] = React.useState("");
 
+  
   const handleSubmit = (e) => {
     e.preventDefault();
 
