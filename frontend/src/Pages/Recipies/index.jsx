@@ -75,14 +75,14 @@ function Recipies() { // class
           <center><h2 className="mt-2">Share Your all Recipies With Us </h2>
           <div className="mt-2 mb-3">
             <label className="form-label "></label>
-            
+
             <input
               type="text"
               style={{marginTop: '50px', width: '500px'}} // styles
               className="form-control"
               placeholder="Please Enter the recipe name"
               value={caption}
-              onChange={(e) =>  setCaption(e.target.value)}
+              onChange={(e) =>  setCaption (e.target.value)}
             />
             <br></br>
             <input 
