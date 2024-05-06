@@ -19,10 +19,10 @@ function Login() {
   };
 
   return (
-    <div className="register-container" style={{ backgroundImage: `url('https://t4.ftcdn.net/jpg/03/50/81/89/360_F_350818949_lJTfzSTDr79e9Kn55PUVZjN19ct20uGc.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center', borderRadius: "10px", boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)" }}>
+    <div className="register-container" style={{ backgroundImage: `url('https://t4.ftcdn.net/jpg/03/50/81/89/360_F_350818949_lJTfzSTDr79e9Kn55PUVZjN19ct20uGc.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center', boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)" }}>
     <div className="register-container animated fadeIn"> {/* Apply fadeIn animation class */}
       <div className="card-body">
-        <div className="loginform">
+        <div className="loginform" style={{marginRight:"700px"}}>
           <div className="col-6">
             <form onSubmit={handleSubmit}>
               <div className="mt-5 mb-3">

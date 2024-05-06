@@ -25,7 +25,7 @@ function User() {
         <UserProfile />
       </div>
 
-      <div className="col-md-7">
+      <div className="col-md-9">
         <PostAdd />
         {/* <nav>
           <div class="nav nav-tabs " id="nav-tab" role="tablist">
