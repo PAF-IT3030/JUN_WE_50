@@ -5,6 +5,7 @@ import { deleteUserById } from "../../app/actions/user.actions";
 import storage from "../../util/firebaseConfig";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
+
 //profile function
 function Profile(props) {
   const dispatch = useDispatch();
@@ -78,13 +79,13 @@ function Profile(props) {
     );
   };
 
+
   return (
     // Background image come from google
     <div style={{ backgroundImage: `url('https://wallpaperset.com/w/full/a/3/d/45475.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center', borderRadius: "10px", boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)" }}> 
       
       <h1 className="text-center" style={{ fontFamily:"cursive", color:"white"}}>Update Profile</h1>
       <hr style={{color:"white"}}/>
-      
       <center>
         <div style={{height:"250px", width:"250px"}}></div>
       </center>
@@ -181,22 +182,19 @@ function Profile(props) {
                   props.closeModal();
                 }}
               >
-                CANCEL
+              CANCEL
               </button>
               <button
                 type="submit"
-                className="btn btn-outline-success w-100 mb-3"
-              >
-                Update
-              </button>
+                className="btn btn-outline-success w-100 mb-3">Update</button>
+
               <button className="btn btn-outline-danger w-100 mb-3" onClick={() => handleDelete()}>
                 Delete
               </button>
             </form>
-            {/* Success message */}
             {showSuccessMessage && (
               <div className="alert alert-success" role="alert">
-                Profile updated successfully!
+                Profile updated successfully!!
               </div>
             )}
           </div>
@@ -206,5 +204,6 @@ function Profile(props) {
     
   );
 }
+
 
 export default Profile;

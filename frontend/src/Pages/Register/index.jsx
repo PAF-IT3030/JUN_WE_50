@@ -13,7 +13,7 @@ function Register() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-//-------
+
     if (!username || !password || !confirmPassword) {
       setError("All fields are required");
       return;
@@ -66,9 +66,7 @@ function Register() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-
             <br></br>
-
             <label style={{ color: "white"}}  htmlFor="confirmPassword">Confirm Password</label>
             <input
               type="password"
@@ -77,9 +75,7 @@ function Register() {
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
-
-            <br></br>   
-          
+            <br></br>
           <button type="submit" className="btn btn-primary">
             Register
           </button>
@@ -87,8 +83,8 @@ function Register() {
       </div>
       </div>
     </div>
-    
   );
 }  
 
 export default Register;
+
