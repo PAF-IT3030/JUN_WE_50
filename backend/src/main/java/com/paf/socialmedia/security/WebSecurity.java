@@ -50,6 +50,8 @@ public class WebSecurity {
                         .antMatchers("/api/comments/**").permitAll()
                         .antMatchers("/api/postshare/**").permitAll()
                         .antMatchers("/api/notifications/**").permitAll()
+                        .antMatchers("/api/comments_workouts/**").permitAll()
+                        .antMatchers("/api/posts/workout/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .csrf().disable()

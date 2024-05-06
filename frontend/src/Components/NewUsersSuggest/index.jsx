@@ -18,7 +18,7 @@ function NewUsersSuggest() {
   return (
     <div>
       <div className="col-md-2"></div>
-      <div className="row card p-3 post-card">
+      <div className="row card p-3 post">
         <h5>People you may know...</h5>
         {user &&
           usersList.length &&

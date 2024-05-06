@@ -4,7 +4,7 @@ body {
   font-family: 'Nunito Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url("https://images.pexels.com/photos/39671/physiotherapy-weight-training-dumbbell-exercise-balls-39671.jpeg?auto=compress&cs=tinysrgb&w=600") repeat center fixed;
+  /* background: url("https://images.pexels.com/photos/39671/physiotherapy-weight-training-dumbbell-exercise-balls-39671.jpeg?auto=compress&cs=tinysrgb&w=600") repeat center fixed; */
   background-size: contain;
 }
 
@@ -96,11 +96,54 @@ code {
   display: flex;
 }
 
+
+
 .collage-image {
-  width: 100%; /* Ensure images fill the column */
-  height: auto; /* Maintain aspect ratio */
+  width: 80%; /* Ensure images fill the column */
+  height: 100%; /* Maintain aspect ratio */
+  
 }
 
 
+.collage {
+  display: flex;
+  flex-direction: column;
+}
 
+.row {
+  display: flex;
+}
+
+.collage-item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255); /* Add a black background */
+}
+
+.collage-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  border: solid rgba(139, 139, 139, 0.788) 2px;
+
+}
+
+.btn-follow{
+  
+  border: none;
+  color: #1100ff;
+  background-color: white;
+  border: solid 1px #1100ff;
+
+}
+
+.btn-follow:hover{
+  background-color: #1100ff;
+  color: white;
+  
+  transition: 0.5s;
+}
 
