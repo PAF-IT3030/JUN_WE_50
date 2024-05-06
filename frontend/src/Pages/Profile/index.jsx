@@ -91,6 +91,7 @@ function Profile(props) {
       <div className="container">
         <div className="row mt-5">
           <div className="col-md-6 offset-md-3">
+            
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
                 <label style={{color:"white"}} htmlFor="username" className="form-label">
@@ -185,10 +186,8 @@ function Profile(props) {
               </button>
               <button
                 type="submit"
-                className="btn btn-outline-success w-100 mb-3"
-              >
-                Update
-              </button>
+                className="btn btn-outline-success w-100 mb-3">Update</button>
+                
               <button className="btn btn-outline-danger w-100 mb-3" onClick={() => handleDelete()}>
                 Delete
               </button>
