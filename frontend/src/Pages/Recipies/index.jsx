@@ -28,6 +28,7 @@ function Recipies() { // class
     setImgLink(""); // set image
     setDesc(""); // set description
     fileInputRef.current.value = ""; // fileinput
+    
 
   };
 
