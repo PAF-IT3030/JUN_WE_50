@@ -88,7 +88,7 @@ function Recipies() { // class
               onChange={(e) =>  setCaption  (e.target.value)} // onchange
             />
             <br></br>
-            <input 
+            <input // inpt
 
               type="text" 
               style={{marginTop: '10px',  width: '501px'}} // styles
@@ -126,7 +126,7 @@ function Recipies() { // class
           <center><button style={{marginBottom: '200px'}} type="submit" className="btn btn-outline-primary"> 
             POST  
           </button></center> 
-          
+
 
         </form> 
       </div>
