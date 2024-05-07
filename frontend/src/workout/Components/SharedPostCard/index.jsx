@@ -23,9 +23,9 @@ function SharedPostCard({ post, fetchType }) {
             id: post.id,
             caption: captionEdit,
         };
-        await dispatch(updatePostShareById(newPost));
+        dispatch(updatePostShareById(newPost));
         if (fetchType === "GET_ALL_POSTS_SHARED") {
-            await dispatch(getPostShareByUserId(user.userId));
+            dispatch(getPostShareByUserId(user.userId));
         }
         setCaption(captionEdit);
         setEditable(false);
