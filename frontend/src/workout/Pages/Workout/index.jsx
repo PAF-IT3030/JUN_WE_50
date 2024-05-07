@@ -4,6 +4,7 @@ import { getUser, updateUserById } from "../../app/actions/user.actions";
 import { deleteUserById } from "../../app/actions/user.actions";
 import storage from "../../util/firebaseConfig";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import "./style.css"
 
 function Profile(props) {
     const dispatch = useDispatch();
