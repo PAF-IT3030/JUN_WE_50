@@ -44,7 +44,6 @@ function Home() {
                 </div>
                 <div className="col-md-3">
                     <div className="sticky-top">
-                        {/* Right Sidebar */}
                     </div>
 
                     <div
