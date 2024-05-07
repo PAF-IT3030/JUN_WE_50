@@ -4,74 +4,68 @@ import { followUserById, getAllUsers } from "../../app/actions/user.actions";
 import { saveNotification } from "../../app/actions/notification.action";
 
 function FollowButton({ userDetails, fetchType }) {
-  const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
-  const [followed, setFollowed] = useState(false);
+    const dispatch = useDispatch();
+    const user = useSelector((state) => state.user);
+    const [followed, setFollowed] = useState(false);
 
-  useEffect(() => {
-    if (userDetails?.followedBy && userDetails.followedBy?.length) {
-      const userIdIndex = userDetails.followedBy.indexOf(user.userId);
+    useEffect(() => {
+        if (userDetails?.followedBy && userDetails.followedBy?.length) {
+            const userIdIndex = userDetails.followedBy.indexOf(user.userId);
 
-      if (userIdIndex > -1) {
-        setFollowed(true);
-      } else {
-        setFollowed(false);
-      }
-    } else {
-      setFollowed(false);
-    }
-  }, [user.users]);
+            if (userIdIndex > -1) {
+                setFollowed(true);
+            } else {
+                setFollowed(false);
+            }
+        } else {
+            setFollowed(false);
+        }
+    }, [user.users]);
 
-  const handleOnFollow = async () => {
-    const tempFollowingArray = userDetails.followedBy
-      ? userDetails.followedBy.slice()
-      : [];
-    const userId = user.userId.toString();
-    const userIdIndex = tempFollowingArray.indexOf(userId);
+    const handleOnFollow = async () => {
+        const tempFollowingArray = userDetails.followedBy
+            ? userDetails.followedBy.slice()
+            : [];
+        const userId = user.userId.toString();
+        const userIdIndex = tempFollowingArray.indexOf(userId);
 
-    if (userIdIndex > -1) {
-      tempFollowingArray.splice(userIdIndex, 1);
-      setFollowed(false);
-    } else {
-      tempFollowingArray.push(userId);
-      setFollowed(true);
-    }
+        if (userIdIndex > -1) {
+            tempFollowingArray.splice(userIdIndex, 1);
+            setFollowed(false);
+        } else {
+            tempFollowingArray.push(userId);
+            setFollowed(true);
+        }
 
-    const followedUsers = {
-      id: userDetails.id,
-      followedBy: tempFollowingArray,
+        const followedUsers = {
+            id: userDetails.id,
+            followedBy: tempFollowingArray,
+        };
+
+        await dispatch(followUserById(followedUsers));
+        await dispatch(getAllUsers());
+
+        const newNotification = {
+            message: "Followed by " + user.user.username,
+            userId: userDetails.userId,
+        };
+
+        await dispatch(saveNotification(newNotification));
     };
 
-    await dispatch(followUserById(followedUsers));
-    await dispatch(getAllUsers());
-
-    const newNotification = {
-      message: "Followed by " + user.user.username,
-      userId: userDetails.userId,
-    };
-
-    await dispatch(saveNotification(newNotification));
-  };
-
-  return (
-    <>
-      {followed ? (
-        <button
-          className="btn-follow btn-sm"
-          onClick={handleOnFollow}
-        >
-          Unfollow
-        </button>
-      ) : (
-        <button
-          className="btn-follow btn-sm"
-          onClick={handleOnFollow}
-        >
-          Follow
-        </button>
-      )}
-    </>
-  );
+    return (
+        <>
+            {followed ? (
+                <button className="btn-follow btn-sm" onClick={handleOnFollow}>
+                    Unfollow
+                </button>
+            ) : (
+                <button className="btn-follow btn-sm" onClick={handleOnFollow}>
+                    Follow
+                </button>
+            )}
+        </>
+    );
 }
 
 export default FollowButton;
